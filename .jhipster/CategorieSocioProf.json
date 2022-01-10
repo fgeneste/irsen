@@ -1,0 +1,36 @@
+{
+  "name": "CategorieSocioProf",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelleComplet",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "etatCivil",
+      "otherEntityRelationshipName": "categorieSocioProf",
+      "relationshipName": "categorieSocioProf",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "categorie_socio_prof",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220110143157"
+}

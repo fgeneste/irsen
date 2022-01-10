@@ -1,0 +1,28 @@
+{
+  "irsenApp": {
+    "paysNaissance": {
+      "home": {
+        "title": "Pays Naissances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Pays Naissance",
+        "createOrEditLabel": "Create or edit a Pays Naissance",
+        "notFound": "No Pays Naissances found"
+      },
+      "created": "A new Pays Naissance is created with identifier {{ param }}",
+      "updated": "A Pays Naissance is updated with identifier {{ param }}",
+      "deleted": "A Pays Naissance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pays Naissance {{ id }}?"
+      },
+      "detail": {
+        "title": "Pays Naissance"
+      },
+      "id": "ID",
+      "code": "Code",
+      "libelle": "Libelle",
+      "avecConseilDepartemental": "Avec Conseil Departemental",
+      "article": "Article",
+      "etatCivil": "Etat Civil"
+    }
+  }
+}

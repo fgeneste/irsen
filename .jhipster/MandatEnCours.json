@@ -1,0 +1,73 @@
+{
+  "name": "MandatEnCours",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idType",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "idFonction",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelleFonction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "circonscription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "depuis",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateElection",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "population",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelleAffichage",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fonctionEnCours",
+      "otherEntityRelationshipName": "fonctions",
+      "relationshipName": "fonctionEnCours"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "mandat",
+      "otherEntityRelationshipName": "mandatEnCours",
+      "relationshipName": "mandatsEnCours"
+    }
+  ],
+  "entityTableName": "mandat_en_cours",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220110143207"
+}

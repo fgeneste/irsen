@@ -1,0 +1,43 @@
+{
+  "irsenApp": {
+    "etatCivil": {
+      "home": {
+        "title": "Etat Civils",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Etat Civil",
+        "createOrEditLabel": "Create or edit a Etat Civil",
+        "notFound": "No Etat Civils found"
+      },
+      "created": "A new Etat Civil is created with identifier {{ param }}",
+      "updated": "A Etat Civil is updated with identifier {{ param }}",
+      "deleted": "A Etat Civil is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Etat Civil {{ id }}?"
+      },
+      "detail": {
+        "title": "Etat Civil"
+      },
+      "id": "ID",
+      "matricule": "Matricule",
+      "civilite": "Civilite",
+      "titre": "Titre",
+      "nomFamille": "Nom Famille",
+      "nomMarital": "Nom Marital",
+      "nomUsuel": "Nom Usuel",
+      "prenoms": "Prenoms",
+      "prenomUsuel": "Prenom Usuel",
+      "dateNaissance": "Date Naissance",
+      "communeNaissance": "Commune Naissance",
+      "profession": "Profession",
+      "courriel": "Courriel",
+      "courriel2": "Courriel 2",
+      "telephonePortable": "Telephone Portable",
+      "telephonePortable2": "Telephone Portable 2",
+      "telephoneFixe": "Telephone Fixe",
+      "departementNaissance": "Departement Naissance",
+      "paysNaissance": "Pays Naissance",
+      "categorieSocioProf": "Categorie Socio Prof",
+      "senateur": "Senateur"
+    }
+  }
+}

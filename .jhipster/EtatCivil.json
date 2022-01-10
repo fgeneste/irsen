@@ -1,0 +1,109 @@
+{
+  "name": "EtatCivil",
+  "fields": [
+    {
+      "fieldName": "matricule",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "civilite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "titre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomFamille",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomMarital",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomUsuel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenoms",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenomUsuel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateNaissance",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "communeNaissance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "profession",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "courriel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "courriel2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephonePortable",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephonePortable2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephoneFixe",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "departementNaissance",
+      "otherEntityRelationshipName": "etatCivil",
+      "relationshipName": "departementNaissance",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "paysNaissance",
+      "otherEntityRelationshipName": "etatCivil",
+      "relationshipName": "paysNaissance",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "categorieSocioProf",
+      "otherEntityRelationshipName": "categorieSocioProf",
+      "relationshipName": "categorieSocioProf",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "senateur",
+      "otherEntityRelationshipName": "etatCivil",
+      "relationshipName": "senateur",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "etat_civil",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220110143158"
+}
