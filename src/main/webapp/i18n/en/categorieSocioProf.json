@@ -1,0 +1,27 @@
+{
+  "irsenApp": {
+    "categorieSocioProf": {
+      "home": {
+        "title": "Categorie Socio Profs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Categorie Socio Prof",
+        "createOrEditLabel": "Create or edit a Categorie Socio Prof",
+        "notFound": "No Categorie Socio Profs found"
+      },
+      "created": "A new Categorie Socio Prof is created with identifier {{ param }}",
+      "updated": "A Categorie Socio Prof is updated with identifier {{ param }}",
+      "deleted": "A Categorie Socio Prof is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Categorie Socio Prof {{ id }}?"
+      },
+      "detail": {
+        "title": "Categorie Socio Prof"
+      },
+      "id": "ID",
+      "code": "Code",
+      "libelle": "Libelle",
+      "libelleComplet": "Libelle Complet",
+      "categorieSocioProf": "Categorie Socio Prof"
+    }
+  }
+}

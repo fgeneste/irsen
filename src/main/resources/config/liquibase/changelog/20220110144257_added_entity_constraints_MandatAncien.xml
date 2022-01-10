@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity MandatAncien.
+    -->
+    <changeSet id="20220110144257-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="fonction_ancien_id"
+                                 baseTableName="mandat_ancien"
+                                 constraintName="fk_mandat_ancien__fonction_ancien_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fonction_ancien"/>
+    </changeSet>
+</databaseChangeLog>

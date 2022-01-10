@@ -1,0 +1,27 @@
+{
+  "irsenApp": {
+    "fonctionAncien": {
+      "home": {
+        "title": "FonctionAnciens",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Fonction Ancien",
+        "createOrEditLabel": "Créer ou éditer un Fonction Ancien",
+        "notFound": "Aucun Fonction Ancien trouvé"
+      },
+      "created": "Un nouveau Fonction Ancien a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Fonction Ancien avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Fonction Ancien avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Fonction Ancien {{ id }} ?"
+      },
+      "detail": {
+        "title": "Fonction Ancien"
+      },
+      "id": "Id",
+      "libelle": "Libelle",
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin",
+      "fonctions": "Fonctions"
+    }
+  }
+}

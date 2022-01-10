@@ -1,0 +1,27 @@
+{
+  "irsenApp": {
+    "adresses": {
+      "home": {
+        "title": "Adresses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Adresses",
+        "createOrEditLabel": "Create or edit a Adresses",
+        "notFound": "No Adresses found"
+      },
+      "created": "A new Adresses is created with identifier {{ param }}",
+      "updated": "A Adresses is updated with identifier {{ param }}",
+      "deleted": "A Adresses is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Adresses {{ id }}?"
+      },
+      "detail": {
+        "title": "Adresses"
+      },
+      "id": "ID",
+      "adresseFiscale": "Adresse Fiscale",
+      "adressePostale": "Adresse Postale",
+      "adressePostale2": "Adresse Postale 2",
+      "senateur": "Senateur"
+    }
+  }
+}

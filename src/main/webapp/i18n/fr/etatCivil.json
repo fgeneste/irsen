@@ -1,0 +1,43 @@
+{
+  "irsenApp": {
+    "etatCivil": {
+      "home": {
+        "title": "EtatCivils",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Etat Civil",
+        "createOrEditLabel": "Créer ou éditer un Etat Civil",
+        "notFound": "Aucun Etat Civil trouvé"
+      },
+      "created": "Un nouveau Etat Civil a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Etat Civil avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Etat Civil avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Etat Civil {{ id }} ?"
+      },
+      "detail": {
+        "title": "Etat Civil"
+      },
+      "id": "ID",
+      "matricule": "Matricule",
+      "civilite": "Civilite",
+      "titre": "Titre",
+      "nomFamille": "Nom Famille",
+      "nomMarital": "Nom Marital",
+      "nomUsuel": "Nom Usuel",
+      "prenoms": "Prenoms",
+      "prenomUsuel": "Prenom Usuel",
+      "dateNaissance": "Date Naissance",
+      "communeNaissance": "Commune Naissance",
+      "profession": "Profession",
+      "courriel": "Courriel",
+      "courriel2": "Courriel 2",
+      "telephonePortable": "Telephone Portable",
+      "telephonePortable2": "Telephone Portable 2",
+      "telephoneFixe": "Telephone Fixe",
+      "departementNaissance": "Departement Naissance",
+      "paysNaissance": "Pays Naissance",
+      "categorieSocioProf": "Categorie Socio Prof",
+      "senateur": "Senateur"
+    }
+  }
+}

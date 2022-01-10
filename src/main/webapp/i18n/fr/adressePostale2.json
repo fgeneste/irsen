@@ -1,0 +1,33 @@
+{
+  "irsenApp": {
+    "adressePostale2": {
+      "home": {
+        "title": "AdressePostale2s",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Adresse Postale 2",
+        "createOrEditLabel": "Créer ou éditer un Adresse Postale 2",
+        "notFound": "Aucun Adresse Postale 2 trouvé"
+      },
+      "created": "Un nouveau Adresse Postale 2 a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Adresse Postale 2 avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Adresse Postale 2 avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Adresse Postale 2 {{ id }} ?"
+      },
+      "detail": {
+        "title": "Adresse Postale 2"
+      },
+      "id": "Id",
+      "label": "Label",
+      "numero": "Numero",
+      "voie": "Voie",
+      "codePostal": "Code Postal",
+      "ville": "Ville",
+      "pays": "Pays",
+      "localisation": "Localisation",
+      "modeManuel": "Mode Manuel",
+      "type": "Type",
+      "adresses": "Adresses"
+    }
+  }
+}
