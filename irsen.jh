@@ -1,0 +1,152 @@
+entity Senateur {
+}
+
+entity DepartementNaissance{
+    code String,
+	libelle String,
+	avecConseilDepartemental Boolean,
+	article String,
+	codeSirpas String,
+	codeComparaison String,
+	libelleComplet String,
+	libelleAvecArticle String,
+}
+
+entity PaysNaissance{
+	code String,
+	libelle String,
+	avecConseilDepartemental Boolean,
+	article String,
+}
+
+entity CategorieSocioProf{
+	code String,
+	libelle String,
+	libelleComplet String,
+}
+
+entity EtatCivil{
+	matricule String,
+	civilite String,
+	titre String,
+	nomFamille String,
+	nomMarital String,
+	nomUsuel String,
+	prenoms String,
+	prenomUsuel String,
+	dateNaissance LocalDate,
+	communeNaissance String,
+	profession String,
+	courriel String,
+	courriel2 String,
+	telephonePortable String,
+	telephonePortable2 String,
+	telephoneFixe String,
+}
+
+entity AdresseFiscale{
+	id Long,
+	label String,
+	numero String,
+	voie String,
+	codePostal String,
+	ville String,
+	pays String,
+	localisation String,
+	modeManuel Boolean,
+    type String,
+}
+
+entity AdressePostale{
+	id Long,
+	label String,
+	numero String,
+	voie String,
+	codePostal String,
+	ville String,
+	pays String,
+	localisation String,
+	modeManuel Boolean,
+    type String,
+}
+
+entity AdressePostale2{
+	id Long,
+	label String,
+	numero String,
+	voie String,
+	codePostal String,
+	ville String,
+	pays String,
+	localisation String,
+	modeManuel Boolean,
+    type String,
+}
+
+entity Adresses{
+	//adresseFiscale AdresseFiscale,
+    //adressePostale AdressePostale,
+    //adressePostale2 AdressePostale,
+}
+
+entity FonctionAncien {
+	id Long,
+	libelle String,
+	dateDebut LocalDate,
+	dateFin LocalDate,
+}
+
+entity FonctionEnCours {
+	id Long,
+	libelle String,
+	dateDebut LocalDate,
+	dateFin LocalDate,
+}
+
+entity Mandat{
+}
+
+entity MandatAncien{
+	id Long,
+	idType Long,
+	libelle String,
+	dateDebut LocalDate,
+	dateFin LocalDate,
+	circonscription String,
+	libelleAffichage String,
+}
+
+entity MandatEnCours{
+	id Long,
+	idType Long,
+	idFonction Long,
+	code String,
+	libelle String,
+	libelleFonction String,
+	circonscription String,
+	depuis String,
+	dateElection LocalDate,
+	population String,
+	libelleAffichage String,
+}
+
+relationship OneToOne {
+	Senateur{etatCivil} to EtatCivil{senateur},
+    Senateur{adresses} to Adresses{senateur},
+	EtatCivil{departementNaissance} to DepartementNaissance{etatCivil},
+	EtatCivil{paysNaissance} to PaysNaissance{etatCivil},
+	EtatCivil{categorieSocioProf} to CategorieSocioProf{categorieSocioProf},
+	Senateur{mandats} to Mandat{senateur},
+    Adresses{adresseFiscale} to AdresseFiscale{adresses},
+    Adresses{adressePostale} to AdressePostale{adresses},
+    Adresses{adressePostale2} to AdressePostale2{adresses},
+}
+
+relationship ManyToOne {
+	//Senateur to Adresses{adresses},
+	Mandat to MandatAncien{anciensMandats},	
+	Mandat to MandatEnCours{mandatsEnCours},	
+	MandatAncien to FonctionAncien{fonctions},
+    MandatEnCours to FonctionEnCours{fonctions},
+    
+}
