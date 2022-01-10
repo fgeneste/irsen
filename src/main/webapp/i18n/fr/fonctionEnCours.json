@@ -1,0 +1,27 @@
+{
+  "irsenApp": {
+    "fonctionEnCours": {
+      "home": {
+        "title": "FonctionEnCours",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Fonction En Cours",
+        "createOrEditLabel": "Créer ou éditer un Fonction En Cours",
+        "notFound": "Aucun Fonction En Cours trouvé"
+      },
+      "created": "Un nouveau Fonction En Cours a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Fonction En Cours avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Fonction En Cours avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Fonction En Cours {{ id }} ?"
+      },
+      "detail": {
+        "title": "Fonction En Cours"
+      },
+      "id": "Id",
+      "libelle": "Libelle",
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin",
+      "fonctions": "Fonctions"
+    }
+  }
+}

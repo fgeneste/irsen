@@ -1,0 +1,35 @@
+{
+  "irsenApp": {
+    "mandatEnCours": {
+      "home": {
+        "title": "Mandat En Cours",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Mandat En Cours",
+        "createOrEditLabel": "Create or edit a Mandat En Cours",
+        "notFound": "No Mandat En Cours found"
+      },
+      "created": "A new Mandat En Cours is created with identifier {{ param }}",
+      "updated": "A Mandat En Cours is updated with identifier {{ param }}",
+      "deleted": "A Mandat En Cours is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Mandat En Cours {{ id }}?"
+      },
+      "detail": {
+        "title": "Mandat En Cours"
+      },
+      "id": "Id",
+      "idType": "Id Type",
+      "idFonction": "Id Fonction",
+      "code": "Code",
+      "libelle": "Libelle",
+      "libelleFonction": "Libelle Fonction",
+      "circonscription": "Circonscription",
+      "depuis": "Depuis",
+      "dateElection": "Date Election",
+      "population": "Population",
+      "libelleAffichage": "Libelle Affichage",
+      "fonctionEnCours": "Fonction En Cours",
+      "mandatsEnCours": "Mandats En Cours"
+    }
+  }
+}

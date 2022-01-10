@@ -1,0 +1,26 @@
+{
+  "irsenApp": {
+    "senateur": {
+      "home": {
+        "title": "Senateurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Senateur",
+        "createOrEditLabel": "Create or edit a Senateur",
+        "notFound": "No Senateurs found"
+      },
+      "created": "A new Senateur is created with identifier {{ param }}",
+      "updated": "A Senateur is updated with identifier {{ param }}",
+      "deleted": "A Senateur is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Senateur {{ id }}?"
+      },
+      "detail": {
+        "title": "Senateur"
+      },
+      "id": "ID",
+      "etatCivil": "Etat Civil",
+      "adresses": "Adresses",
+      "mandats": "Mandats"
+    }
+  }
+}

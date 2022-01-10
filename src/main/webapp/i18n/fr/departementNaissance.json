@@ -1,0 +1,32 @@
+{
+  "irsenApp": {
+    "departementNaissance": {
+      "home": {
+        "title": "DepartementNaissances",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Departement Naissance",
+        "createOrEditLabel": "Créer ou éditer un Departement Naissance",
+        "notFound": "Aucun Departement Naissance trouvé"
+      },
+      "created": "Un nouveau Departement Naissance a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Departement Naissance avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Departement Naissance avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Departement Naissance {{ id }} ?"
+      },
+      "detail": {
+        "title": "Departement Naissance"
+      },
+      "id": "ID",
+      "code": "Code",
+      "libelle": "Libelle",
+      "avecConseilDepartemental": "Avec Conseil Departemental",
+      "article": "Article",
+      "codeSirpas": "Code Sirpas",
+      "codeComparaison": "Code Comparaison",
+      "libelleComplet": "Libelle Complet",
+      "libelleAvecArticle": "Libelle Avec Article",
+      "etatCivil": "Etat Civil"
+    }
+  }
+}

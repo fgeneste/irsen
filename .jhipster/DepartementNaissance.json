@@ -1,0 +1,56 @@
+{
+  "name": "DepartementNaissance",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "avecConseilDepartemental",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "article",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codeSirpas",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codeComparaison",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelleComplet",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelleAvecArticle",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "etatCivil",
+      "otherEntityRelationshipName": "departementNaissance",
+      "relationshipName": "etatCivil",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "departement_naissance",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220110143155"
+}

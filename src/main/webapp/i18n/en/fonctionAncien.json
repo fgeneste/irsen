@@ -1,0 +1,27 @@
+{
+  "irsenApp": {
+    "fonctionAncien": {
+      "home": {
+        "title": "Fonction Anciens",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fonction Ancien",
+        "createOrEditLabel": "Create or edit a Fonction Ancien",
+        "notFound": "No Fonction Anciens found"
+      },
+      "created": "A new Fonction Ancien is created with identifier {{ param }}",
+      "updated": "A Fonction Ancien is updated with identifier {{ param }}",
+      "deleted": "A Fonction Ancien is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fonction Ancien {{ id }}?"
+      },
+      "detail": {
+        "title": "Fonction Ancien"
+      },
+      "id": "Id",
+      "libelle": "Libelle",
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin",
+      "fonctions": "Fonctions"
+    }
+  }
+}
