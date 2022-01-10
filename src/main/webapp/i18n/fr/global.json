@@ -7,6 +7,20 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "senateur": "Senateur",
+        "departementNaissance": "Departement Naissance",
+        "paysNaissance": "Pays Naissance",
+        "categorieSocioProf": "Categorie Socio Prof",
+        "etatCivil": "Etat Civil",
+        "adresseFiscale": "Adresse Fiscale",
+        "adressePostale": "Adresse Postale",
+        "adressePostale2": "Adresse Postale 2",
+        "adresses": "Adresses",
+        "fonctionAncien": "Fonction Ancien",
+        "fonctionEnCours": "Fonction En Cours",
+        "mandat": "Mandat",
+        "mandatAncien": "Mandat Ancien",
+        "mandatEnCours": "Mandat En Cours",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

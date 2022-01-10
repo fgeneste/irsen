@@ -1,0 +1,26 @@
+{
+  "irsenApp": {
+    "mandat": {
+      "home": {
+        "title": "Mandats",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Mandat",
+        "createOrEditLabel": "Créer ou éditer un Mandat",
+        "notFound": "Aucun Mandat trouvé"
+      },
+      "created": "Un nouveau Mandat a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Mandat avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Mandat avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Mandat {{ id }} ?"
+      },
+      "detail": {
+        "title": "Mandat"
+      },
+      "id": "ID",
+      "mandatAncien": "Mandat Ancien",
+      "mandatEnCours": "Mandat En Cours",
+      "senateur": "Senateur"
+    }
+  }
+}

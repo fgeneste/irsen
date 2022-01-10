@@ -1,0 +1,44 @@
+{
+  "name": "Adresses",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "adresseFiscale",
+      "otherEntityRelationshipName": "adresses",
+      "relationshipName": "adresseFiscale",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "adressePostale",
+      "otherEntityRelationshipName": "adresses",
+      "relationshipName": "adressePostale",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "adressePostale2",
+      "otherEntityRelationshipName": "adresses",
+      "relationshipName": "adressePostale2",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "senateur",
+      "otherEntityRelationshipName": "adresses",
+      "relationshipName": "senateur",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "adresses",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220110144253"
+}
