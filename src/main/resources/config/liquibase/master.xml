@@ -15,7 +15,29 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145259_added_entity_Senateur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145300_added_entity_DepartementNaissance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145301_added_entity_PaysNaissance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145302_added_entity_CategorieSocioProf.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145303_added_entity_EtatCivil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145304_added_entity_AdresseFiscale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145305_added_entity_AdressePostale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145306_added_entity_AdressePostale2.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145307_added_entity_Adresses.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145308_added_entity_FonctionAncien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145309_added_entity_FonctionEnCours.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145310_added_entity_Mandat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145311_added_entity_MandatAncien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145312_added_entity_MandatEnCours.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20220110145259_added_entity_constraints_Senateur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145303_added_entity_constraints_EtatCivil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145307_added_entity_constraints_Adresses.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145310_added_entity_constraints_Mandat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145311_added_entity_constraints_MandatAncien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145312_added_entity_constraints_MandatEnCours.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145308_added_entity_constraints_FonctionAncien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220110145309_added_entity_constraints_FonctionEnCours.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

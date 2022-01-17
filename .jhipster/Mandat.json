@@ -1,0 +1,35 @@
+{
+  "name": "Mandat",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "senateur",
+      "otherEntityRelationshipName": "mandats",
+      "relationshipName": "senateur",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "mandatAncien",
+      "otherEntityRelationshipName": "mandat",
+      "relationshipName": "anciensMandats"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "mandatEnCours",
+      "otherEntityRelationshipName": "mandat",
+      "relationshipName": "mandatsEnCours"
+    }
+  ],
+  "entityTableName": "mandat",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220110145310"
+}

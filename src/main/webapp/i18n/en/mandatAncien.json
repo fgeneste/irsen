@@ -1,0 +1,31 @@
+{
+  "irsenApp": {
+    "mandatAncien": {
+      "home": {
+        "title": "Mandat Anciens",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Mandat Ancien",
+        "createOrEditLabel": "Create or edit a Mandat Ancien",
+        "notFound": "No Mandat Anciens found"
+      },
+      "created": "A new Mandat Ancien is created with identifier {{ param }}",
+      "updated": "A Mandat Ancien is updated with identifier {{ param }}",
+      "deleted": "A Mandat Ancien is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Mandat Ancien {{ id }}?"
+      },
+      "detail": {
+        "title": "Mandat Ancien"
+      },
+      "id": "ID",
+      "idType": "Id Type",
+      "libelle": "Libelle",
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin",
+      "circonscription": "Circonscription",
+      "libelleAffichage": "Libelle Affichage",
+      "mandat": "Mandat",
+      "fonctions": "Fonctions"
+    }
+  }
+}

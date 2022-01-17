@@ -51,6 +51,32 @@ public class CacheConfiguration {
             createCache(cm, fr.senat.irsen.domain.User.class.getName());
             createCache(cm, fr.senat.irsen.domain.Authority.class.getName());
             createCache(cm, fr.senat.irsen.domain.User.class.getName() + ".authorities");
+            createCache(cm, fr.senat.irsen.domain.Senateur.class.getName());
+            createCache(cm, fr.senat.irsen.domain.DepartementNaissance.class.getName());
+            createCache(cm, fr.senat.irsen.domain.PaysNaissance.class.getName());
+            createCache(cm, fr.senat.irsen.domain.CategorieSocioProf.class.getName());
+            createCache(cm, fr.senat.irsen.domain.EtatCivil.class.getName());
+            createCache(cm, fr.senat.irsen.domain.AdresseFiscale.class.getName());
+            createCache(cm, fr.senat.irsen.domain.AdressePostale.class.getName());
+            createCache(cm, fr.senat.irsen.domain.AdressePostale2.class.getName());
+            createCache(cm, fr.senat.irsen.domain.Adresses.class.getName());
+            createCache(cm, fr.senat.irsen.domain.FonctionAncien.class.getName());
+            createCache(cm, fr.senat.irsen.domain.FonctionAncien.class.getName() + ".fonctions");
+            createCache(cm, fr.senat.irsen.domain.FonctionEnCours.class.getName());
+            createCache(cm, fr.senat.irsen.domain.FonctionEnCours.class.getName() + ".fonctions");
+            createCache(cm, fr.senat.irsen.domain.Mandat.class.getName());
+            createCache(cm, fr.senat.irsen.domain.MandatAncien.class.getName());
+            createCache(cm, fr.senat.irsen.domain.MandatAncien.class.getName() + ".anciensMandats");
+            createCache(cm, fr.senat.irsen.domain.MandatEnCours.class.getName());
+            createCache(cm, fr.senat.irsen.domain.MandatEnCours.class.getName() + ".mandatsEnCours");
+            createCache(cm, fr.senat.irsen.domain.Mandat.class.getName() + ".mandatAnciens");
+            createCache(cm, fr.senat.irsen.domain.Mandat.class.getName() + ".mandatEnCours");
+            createCache(cm, fr.senat.irsen.domain.MandatAncien.class.getName() + ".fonctionAnciens");
+            createCache(cm, fr.senat.irsen.domain.MandatEnCours.class.getName() + ".fonctionEnCours");
+            createCache(cm, fr.senat.irsen.domain.Mandat.class.getName() + ".anciensMandats");
+            createCache(cm, fr.senat.irsen.domain.Mandat.class.getName() + ".mandatsEnCours");
+            createCache(cm, fr.senat.irsen.domain.MandatAncien.class.getName() + ".fonctions");
+            createCache(cm, fr.senat.irsen.domain.MandatEnCours.class.getName() + ".fonctions");
             // jhipster-needle-ehcache-add-entry
         };
     }

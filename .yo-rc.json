@@ -42,7 +42,24 @@
     "clientTheme": "none",
     "clientThemeVariant": "",
     "reactive": false,
-    "enableGradleEnterprise": false
+    "enableGradleEnterprise": false,
+    "entities": [
+      "Senateur",
+      "DepartementNaissance",
+      "PaysNaissance",
+      "CategorieSocioProf",
+      "EtatCivil",
+      "AdresseFiscale",
+      "AdressePostale",
+      "AdressePostale2",
+      "Adresses",
+      "FonctionAncien",
+      "FonctionEnCours",
+      "Mandat",
+      "MandatAncien",
+      "MandatEnCours"
+    ],
+    "lastLiquibaseTimestamp": 1641826392000
   },
   "git-provider": "GitHub",
   "git-company": "fgeneste",

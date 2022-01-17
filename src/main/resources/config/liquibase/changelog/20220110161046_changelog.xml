@@ -1,0 +1,123 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="fgeneste (generated)" id="1641831064894-1">
+        <dropForeignKeyConstraint baseTableName="adresses" constraintName="fk_adresses__adresse_fiscale_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-2">
+        <dropForeignKeyConstraint baseTableName="adresses" constraintName="fk_adresses__adresse_postale2_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-3">
+        <dropForeignKeyConstraint baseTableName="adresses" constraintName="fk_adresses__adresse_postale_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-4">
+        <dropForeignKeyConstraint baseTableName="jhi_user_authority" constraintName="fk_authority_name"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-5">
+        <dropForeignKeyConstraint baseTableName="etat_civil" constraintName="fk_etat_civil__categorie_socio_prof_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-6">
+        <dropForeignKeyConstraint baseTableName="etat_civil" constraintName="fk_etat_civil__departement_naissance_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-7">
+        <dropForeignKeyConstraint baseTableName="etat_civil" constraintName="fk_etat_civil__pays_naissance_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-8">
+        <dropForeignKeyConstraint baseTableName="senateur" constraintName="fk_senateur__adresses_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-9">
+        <dropForeignKeyConstraint baseTableName="senateur" constraintName="fk_senateur__etat_civil_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-10">
+        <dropForeignKeyConstraint baseTableName="senateur" constraintName="fk_senateur__mandats_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-11">
+        <dropForeignKeyConstraint baseTableName="jhi_user_authority" constraintName="fk_user_id"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-12">
+        <dropUniqueConstraint constraintName="ux_adresses__adresse_fiscale_id" tableName="adresses"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-13">
+        <dropUniqueConstraint constraintName="ux_adresses__adresse_postale2_id" tableName="adresses"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-14">
+        <dropUniqueConstraint constraintName="ux_adresses__adresse_postale_id" tableName="adresses"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-15">
+        <dropUniqueConstraint constraintName="ux_etat_civil__categorie_socio_prof_id" tableName="etat_civil"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-16">
+        <dropUniqueConstraint constraintName="ux_etat_civil__departement_naissance_id" tableName="etat_civil"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-17">
+        <dropUniqueConstraint constraintName="ux_etat_civil__pays_naissance_id" tableName="etat_civil"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-18">
+        <dropUniqueConstraint constraintName="ux_senateur__adresses_id" tableName="senateur"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-19">
+        <dropUniqueConstraint constraintName="ux_senateur__etat_civil_id" tableName="senateur"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-20">
+        <dropUniqueConstraint constraintName="ux_senateur__mandats_id" tableName="senateur"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-21">
+        <dropUniqueConstraint constraintName="ux_user_email" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-22">
+        <dropUniqueConstraint constraintName="ux_user_login" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-23">
+        <dropTable tableName="adresse_fiscale"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-24">
+        <dropTable tableName="adresse_postale"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-25">
+        <dropTable tableName="adresse_postale_2"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-26">
+        <dropTable tableName="adresses"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-27">
+        <dropTable tableName="categorie_socio_prof"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-28">
+        <dropTable tableName="departement_naissance"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-29">
+        <dropTable tableName="etat_civil"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-30">
+        <dropTable tableName="fonction_ancien"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-31">
+        <dropTable tableName="fonction_en_cours"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-32">
+        <dropTable tableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-33">
+        <dropTable tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-34">
+        <dropTable tableName="jhi_user_authority"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-35">
+        <dropTable tableName="mandat"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-36">
+        <dropTable tableName="mandat_ancien"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-37">
+        <dropTable tableName="mandat_en_cours"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-38">
+        <dropTable tableName="pays_naissance"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-39">
+        <dropTable tableName="senateur"/>
+    </changeSet>
+    <changeSet author="fgeneste (generated)" id="1641831064894-40">
+        <dropSequence sequenceName="sequence_generator"/>
+    </changeSet>
+</databaseChangeLog>

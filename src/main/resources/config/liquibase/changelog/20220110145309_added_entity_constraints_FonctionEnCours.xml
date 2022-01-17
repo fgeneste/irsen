@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity FonctionEnCours.
+    -->
+    <changeSet id="20220110145309-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="mandat_en_cours_id"
+                                 baseTableName="fonction_en_cours"
+                                 constraintName="fk_fonction_en_cours__mandat_en_cours_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mandat_en_cours"/>
+    </changeSet>
+</databaseChangeLog>

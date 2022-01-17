@@ -1,0 +1,37 @@
+{
+  "name": "Senateur",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "etatCivil",
+      "otherEntityRelationshipName": "senateur",
+      "relationshipName": "etatCivil",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "adresses",
+      "otherEntityRelationshipName": "senateur",
+      "relationshipName": "adresses",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "mandat",
+      "otherEntityRelationshipName": "senateur",
+      "relationshipName": "mandats",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "senateur",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220110145259"
+}

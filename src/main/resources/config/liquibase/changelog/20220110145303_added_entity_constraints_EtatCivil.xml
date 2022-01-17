@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity EtatCivil.
+    -->
+    <changeSet id="20220110145303-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="departement_naissance_id"
+                                 baseTableName="etat_civil"
+                                 constraintName="fk_etat_civil__departement_naissance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="departement_naissance"/>
+
+        <addForeignKeyConstraint baseColumnNames="pays_naissance_id"
+                                 baseTableName="etat_civil"
+                                 constraintName="fk_etat_civil__pays_naissance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pays_naissance"/>
+
+        <addForeignKeyConstraint baseColumnNames="categorie_socio_prof_id"
+                                 baseTableName="etat_civil"
+                                 constraintName="fk_etat_civil__categorie_socio_prof_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categorie_socio_prof"/>
+    </changeSet>
+</databaseChangeLog>

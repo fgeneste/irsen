@@ -1,0 +1,40 @@
+{
+  "name": "PaysNaissance",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "avecConseilDepartemental",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "article",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "etatCivil",
+      "otherEntityRelationshipName": "paysNaissance",
+      "relationshipName": "etatCivil",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "pays_naissance",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220110145301"
+}

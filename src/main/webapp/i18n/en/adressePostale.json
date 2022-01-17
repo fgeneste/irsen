@@ -1,0 +1,33 @@
+{
+  "irsenApp": {
+    "adressePostale": {
+      "home": {
+        "title": "Adresse Postales",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Adresse Postale",
+        "createOrEditLabel": "Create or edit a Adresse Postale",
+        "notFound": "No Adresse Postales found"
+      },
+      "created": "A new Adresse Postale is created with identifier {{ param }}",
+      "updated": "A Adresse Postale is updated with identifier {{ param }}",
+      "deleted": "A Adresse Postale is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Adresse Postale {{ id }}?"
+      },
+      "detail": {
+        "title": "Adresse Postale"
+      },
+      "id": "ID",
+      "label": "Label",
+      "numero": "Numero",
+      "voie": "Voie",
+      "codePostal": "Code Postal",
+      "ville": "Ville",
+      "pays": "Pays",
+      "localisation": "Localisation",
+      "modeManuel": "Mode Manuel",
+      "type": "Type",
+      "adresses": "Adresses"
+    }
+  }
+}
