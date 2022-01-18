@@ -152,5 +152,5 @@ relationship ManyToOne {
 	MandatEnCours to Mandat{mandatsEnCours},	
 	FonctionAncien to MandatAncien{fonctions},
     FonctionEnCours to MandatEnCours{fonctions},
-    Decoration to Personne{decorations},
+    Decoration to Senateur{decorations},
 }
