@@ -1,0 +1,26 @@
+{
+  "irsenApp": {
+    "telephonePortable": {
+      "home": {
+        "title": "Telephone Portables",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Telephone Portable",
+        "createOrEditLabel": "Create or edit a Telephone Portable",
+        "notFound": "No Telephone Portables found"
+      },
+      "created": "A new Telephone Portable is created with identifier {{ param }}",
+      "updated": "A Telephone Portable is updated with identifier {{ param }}",
+      "deleted": "A Telephone Portable is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Telephone Portable {{ id }}?"
+      },
+      "detail": {
+        "title": "Telephone Portable"
+      },
+      "id": "ID",
+      "type": "Type",
+      "numero": "Numero",
+      "etatCivil": "Etat Civil"
+    }
+  }
+}

@@ -29,11 +29,20 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class AdresseFiscaleResourceIT {
 
-    private static final String DEFAULT_LABEL = "AAAAAAAAAA";
-    private static final String UPDATED_LABEL = "BBBBBBBBBB";
-
     private static final String DEFAULT_NUMERO = "AAAAAAAAAA";
     private static final String UPDATED_NUMERO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_BISTER = "AAAAAAAAAA";
+    private static final String UPDATED_BISTER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_COMPLEMENT_1 = "AAAAAAAAAA";
+    private static final String UPDATED_COMPLEMENT_1 = "BBBBBBBBBB";
+
+    private static final String DEFAULT_COMPLEMENT_2 = "AAAAAAAAAA";
+    private static final String UPDATED_COMPLEMENT_2 = "BBBBBBBBBB";
+
+    private static final String DEFAULT_TYPE_VOIE = "AAAAAAAAAA";
+    private static final String UPDATED_TYPE_VOIE = "BBBBBBBBBB";
 
     private static final String DEFAULT_VOIE = "AAAAAAAAAA";
     private static final String UPDATED_VOIE = "BBBBBBBBBB";
@@ -47,14 +56,11 @@ class AdresseFiscaleResourceIT {
     private static final String DEFAULT_PAYS = "AAAAAAAAAA";
     private static final String UPDATED_PAYS = "BBBBBBBBBB";
 
-    private static final String DEFAULT_LOCALISATION = "AAAAAAAAAA";
-    private static final String UPDATED_LOCALISATION = "BBBBBBBBBB";
+    private static final Boolean DEFAULT_AFFICHAGE_INTERNET = false;
+    private static final Boolean UPDATED_AFFICHAGE_INTERNET = true;
 
-    private static final Boolean DEFAULT_MODE_MANUEL = false;
-    private static final Boolean UPDATED_MODE_MANUEL = true;
-
-    private static final String DEFAULT_TYPE = "AAAAAAAAAA";
-    private static final String UPDATED_TYPE = "BBBBBBBBBB";
+    private static final Boolean DEFAULT_AFFICHAGE_INTRANET = false;
+    private static final Boolean UPDATED_AFFICHAGE_INTRANET = true;
 
     private static final String ENTITY_API_URL = "/api/adresse-fiscales";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -81,15 +87,17 @@ class AdresseFiscaleResourceIT {
      */
     public static AdresseFiscale createEntity(EntityManager em) {
         AdresseFiscale adresseFiscale = new AdresseFiscale()
-            .label(DEFAULT_LABEL)
             .numero(DEFAULT_NUMERO)
+            .bister(DEFAULT_BISTER)
+            .complement1(DEFAULT_COMPLEMENT_1)
+            .complement2(DEFAULT_COMPLEMENT_2)
+            .typeVoie(DEFAULT_TYPE_VOIE)
             .voie(DEFAULT_VOIE)
             .codePostal(DEFAULT_CODE_POSTAL)
             .ville(DEFAULT_VILLE)
             .pays(DEFAULT_PAYS)
-            .localisation(DEFAULT_LOCALISATION)
-            .modeManuel(DEFAULT_MODE_MANUEL)
-            .type(DEFAULT_TYPE);
+            .affichageInternet(DEFAULT_AFFICHAGE_INTERNET)
+            .affichageIntranet(DEFAULT_AFFICHAGE_INTRANET);
         return adresseFiscale;
     }
 
@@ -101,15 +109,17 @@ class AdresseFiscaleResourceIT {
      */
     public static AdresseFiscale createUpdatedEntity(EntityManager em) {
         AdresseFiscale adresseFiscale = new AdresseFiscale()
-            .label(UPDATED_LABEL)
             .numero(UPDATED_NUMERO)
+            .bister(UPDATED_BISTER)
+            .complement1(UPDATED_COMPLEMENT_1)
+            .complement2(UPDATED_COMPLEMENT_2)
+            .typeVoie(UPDATED_TYPE_VOIE)
             .voie(UPDATED_VOIE)
             .codePostal(UPDATED_CODE_POSTAL)
             .ville(UPDATED_VILLE)
             .pays(UPDATED_PAYS)
-            .localisation(UPDATED_LOCALISATION)
-            .modeManuel(UPDATED_MODE_MANUEL)
-            .type(UPDATED_TYPE);
+            .affichageInternet(UPDATED_AFFICHAGE_INTERNET)
+            .affichageIntranet(UPDATED_AFFICHAGE_INTRANET);
         return adresseFiscale;
     }
 
@@ -133,15 +143,17 @@ class AdresseFiscaleResourceIT {
         List<AdresseFiscale> adresseFiscaleList = adresseFiscaleRepository.findAll();
         assertThat(adresseFiscaleList).hasSize(databaseSizeBeforeCreate + 1);
         AdresseFiscale testAdresseFiscale = adresseFiscaleList.get(adresseFiscaleList.size() - 1);
-        assertThat(testAdresseFiscale.getLabel()).isEqualTo(DEFAULT_LABEL);
         assertThat(testAdresseFiscale.getNumero()).isEqualTo(DEFAULT_NUMERO);
+        assertThat(testAdresseFiscale.getBister()).isEqualTo(DEFAULT_BISTER);
+        assertThat(testAdresseFiscale.getComplement1()).isEqualTo(DEFAULT_COMPLEMENT_1);
+        assertThat(testAdresseFiscale.getComplement2()).isEqualTo(DEFAULT_COMPLEMENT_2);
+        assertThat(testAdresseFiscale.getTypeVoie()).isEqualTo(DEFAULT_TYPE_VOIE);
         assertThat(testAdresseFiscale.getVoie()).isEqualTo(DEFAULT_VOIE);
         assertThat(testAdresseFiscale.getCodePostal()).isEqualTo(DEFAULT_CODE_POSTAL);
         assertThat(testAdresseFiscale.getVille()).isEqualTo(DEFAULT_VILLE);
         assertThat(testAdresseFiscale.getPays()).isEqualTo(DEFAULT_PAYS);
-        assertThat(testAdresseFiscale.getLocalisation()).isEqualTo(DEFAULT_LOCALISATION);
-        assertThat(testAdresseFiscale.getModeManuel()).isEqualTo(DEFAULT_MODE_MANUEL);
-        assertThat(testAdresseFiscale.getType()).isEqualTo(DEFAULT_TYPE);
+        assertThat(testAdresseFiscale.getAffichageInternet()).isEqualTo(DEFAULT_AFFICHAGE_INTERNET);
+        assertThat(testAdresseFiscale.getAffichageIntranet()).isEqualTo(DEFAULT_AFFICHAGE_INTRANET);
     }
 
     @Test
@@ -176,15 +188,17 @@ class AdresseFiscaleResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(adresseFiscale.getId().intValue())))
-            .andExpect(jsonPath("$.[*].label").value(hasItem(DEFAULT_LABEL)))
             .andExpect(jsonPath("$.[*].numero").value(hasItem(DEFAULT_NUMERO)))
+            .andExpect(jsonPath("$.[*].bister").value(hasItem(DEFAULT_BISTER)))
+            .andExpect(jsonPath("$.[*].complement1").value(hasItem(DEFAULT_COMPLEMENT_1)))
+            .andExpect(jsonPath("$.[*].complement2").value(hasItem(DEFAULT_COMPLEMENT_2)))
+            .andExpect(jsonPath("$.[*].typeVoie").value(hasItem(DEFAULT_TYPE_VOIE)))
             .andExpect(jsonPath("$.[*].voie").value(hasItem(DEFAULT_VOIE)))
             .andExpect(jsonPath("$.[*].codePostal").value(hasItem(DEFAULT_CODE_POSTAL)))
             .andExpect(jsonPath("$.[*].ville").value(hasItem(DEFAULT_VILLE)))
             .andExpect(jsonPath("$.[*].pays").value(hasItem(DEFAULT_PAYS)))
-            .andExpect(jsonPath("$.[*].localisation").value(hasItem(DEFAULT_LOCALISATION)))
-            .andExpect(jsonPath("$.[*].modeManuel").value(hasItem(DEFAULT_MODE_MANUEL.booleanValue())))
-            .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE)));
+            .andExpect(jsonPath("$.[*].affichageInternet").value(hasItem(DEFAULT_AFFICHAGE_INTERNET.booleanValue())))
+            .andExpect(jsonPath("$.[*].affichageIntranet").value(hasItem(DEFAULT_AFFICHAGE_INTRANET.booleanValue())));
     }
 
     @Test
@@ -199,15 +213,17 @@ class AdresseFiscaleResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(adresseFiscale.getId().intValue()))
-            .andExpect(jsonPath("$.label").value(DEFAULT_LABEL))
             .andExpect(jsonPath("$.numero").value(DEFAULT_NUMERO))
+            .andExpect(jsonPath("$.bister").value(DEFAULT_BISTER))
+            .andExpect(jsonPath("$.complement1").value(DEFAULT_COMPLEMENT_1))
+            .andExpect(jsonPath("$.complement2").value(DEFAULT_COMPLEMENT_2))
+            .andExpect(jsonPath("$.typeVoie").value(DEFAULT_TYPE_VOIE))
             .andExpect(jsonPath("$.voie").value(DEFAULT_VOIE))
             .andExpect(jsonPath("$.codePostal").value(DEFAULT_CODE_POSTAL))
             .andExpect(jsonPath("$.ville").value(DEFAULT_VILLE))
             .andExpect(jsonPath("$.pays").value(DEFAULT_PAYS))
-            .andExpect(jsonPath("$.localisation").value(DEFAULT_LOCALISATION))
-            .andExpect(jsonPath("$.modeManuel").value(DEFAULT_MODE_MANUEL.booleanValue()))
-            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE));
+            .andExpect(jsonPath("$.affichageInternet").value(DEFAULT_AFFICHAGE_INTERNET.booleanValue()))
+            .andExpect(jsonPath("$.affichageIntranet").value(DEFAULT_AFFICHAGE_INTRANET.booleanValue()));
     }
 
     @Test
@@ -230,15 +246,17 @@ class AdresseFiscaleResourceIT {
         // Disconnect from session so that the updates on updatedAdresseFiscale are not directly saved in db
         em.detach(updatedAdresseFiscale);
         updatedAdresseFiscale
-            .label(UPDATED_LABEL)
             .numero(UPDATED_NUMERO)
+            .bister(UPDATED_BISTER)
+            .complement1(UPDATED_COMPLEMENT_1)
+            .complement2(UPDATED_COMPLEMENT_2)
+            .typeVoie(UPDATED_TYPE_VOIE)
             .voie(UPDATED_VOIE)
             .codePostal(UPDATED_CODE_POSTAL)
             .ville(UPDATED_VILLE)
             .pays(UPDATED_PAYS)
-            .localisation(UPDATED_LOCALISATION)
-            .modeManuel(UPDATED_MODE_MANUEL)
-            .type(UPDATED_TYPE);
+            .affichageInternet(UPDATED_AFFICHAGE_INTERNET)
+            .affichageIntranet(UPDATED_AFFICHAGE_INTRANET);
 
         restAdresseFiscaleMockMvc
             .perform(
@@ -252,15 +270,17 @@ class AdresseFiscaleResourceIT {
         List<AdresseFiscale> adresseFiscaleList = adresseFiscaleRepository.findAll();
         assertThat(adresseFiscaleList).hasSize(databaseSizeBeforeUpdate);
         AdresseFiscale testAdresseFiscale = adresseFiscaleList.get(adresseFiscaleList.size() - 1);
-        assertThat(testAdresseFiscale.getLabel()).isEqualTo(UPDATED_LABEL);
         assertThat(testAdresseFiscale.getNumero()).isEqualTo(UPDATED_NUMERO);
+        assertThat(testAdresseFiscale.getBister()).isEqualTo(UPDATED_BISTER);
+        assertThat(testAdresseFiscale.getComplement1()).isEqualTo(UPDATED_COMPLEMENT_1);
+        assertThat(testAdresseFiscale.getComplement2()).isEqualTo(UPDATED_COMPLEMENT_2);
+        assertThat(testAdresseFiscale.getTypeVoie()).isEqualTo(UPDATED_TYPE_VOIE);
         assertThat(testAdresseFiscale.getVoie()).isEqualTo(UPDATED_VOIE);
         assertThat(testAdresseFiscale.getCodePostal()).isEqualTo(UPDATED_CODE_POSTAL);
         assertThat(testAdresseFiscale.getVille()).isEqualTo(UPDATED_VILLE);
         assertThat(testAdresseFiscale.getPays()).isEqualTo(UPDATED_PAYS);
-        assertThat(testAdresseFiscale.getLocalisation()).isEqualTo(UPDATED_LOCALISATION);
-        assertThat(testAdresseFiscale.getModeManuel()).isEqualTo(UPDATED_MODE_MANUEL);
-        assertThat(testAdresseFiscale.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testAdresseFiscale.getAffichageInternet()).isEqualTo(UPDATED_AFFICHAGE_INTERNET);
+        assertThat(testAdresseFiscale.getAffichageIntranet()).isEqualTo(UPDATED_AFFICHAGE_INTRANET);
     }
 
     @Test
@@ -332,12 +352,13 @@ class AdresseFiscaleResourceIT {
         partialUpdatedAdresseFiscale.setId(adresseFiscale.getId());
 
         partialUpdatedAdresseFiscale
-            .numero(UPDATED_NUMERO)
-            .voie(UPDATED_VOIE)
+            .bister(UPDATED_BISTER)
+            .complement1(UPDATED_COMPLEMENT_1)
+            .typeVoie(UPDATED_TYPE_VOIE)
+            .codePostal(UPDATED_CODE_POSTAL)
             .ville(UPDATED_VILLE)
-            .localisation(UPDATED_LOCALISATION)
-            .modeManuel(UPDATED_MODE_MANUEL)
-            .type(UPDATED_TYPE);
+            .pays(UPDATED_PAYS)
+            .affichageInternet(UPDATED_AFFICHAGE_INTERNET);
 
         restAdresseFiscaleMockMvc
             .perform(
@@ -351,15 +372,17 @@ class AdresseFiscaleResourceIT {
         List<AdresseFiscale> adresseFiscaleList = adresseFiscaleRepository.findAll();
         assertThat(adresseFiscaleList).hasSize(databaseSizeBeforeUpdate);
         AdresseFiscale testAdresseFiscale = adresseFiscaleList.get(adresseFiscaleList.size() - 1);
-        assertThat(testAdresseFiscale.getLabel()).isEqualTo(DEFAULT_LABEL);
-        assertThat(testAdresseFiscale.getNumero()).isEqualTo(UPDATED_NUMERO);
-        assertThat(testAdresseFiscale.getVoie()).isEqualTo(UPDATED_VOIE);
-        assertThat(testAdresseFiscale.getCodePostal()).isEqualTo(DEFAULT_CODE_POSTAL);
+        assertThat(testAdresseFiscale.getNumero()).isEqualTo(DEFAULT_NUMERO);
+        assertThat(testAdresseFiscale.getBister()).isEqualTo(UPDATED_BISTER);
+        assertThat(testAdresseFiscale.getComplement1()).isEqualTo(UPDATED_COMPLEMENT_1);
+        assertThat(testAdresseFiscale.getComplement2()).isEqualTo(DEFAULT_COMPLEMENT_2);
+        assertThat(testAdresseFiscale.getTypeVoie()).isEqualTo(UPDATED_TYPE_VOIE);
+        assertThat(testAdresseFiscale.getVoie()).isEqualTo(DEFAULT_VOIE);
+        assertThat(testAdresseFiscale.getCodePostal()).isEqualTo(UPDATED_CODE_POSTAL);
         assertThat(testAdresseFiscale.getVille()).isEqualTo(UPDATED_VILLE);
-        assertThat(testAdresseFiscale.getPays()).isEqualTo(DEFAULT_PAYS);
-        assertThat(testAdresseFiscale.getLocalisation()).isEqualTo(UPDATED_LOCALISATION);
-        assertThat(testAdresseFiscale.getModeManuel()).isEqualTo(UPDATED_MODE_MANUEL);
-        assertThat(testAdresseFiscale.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testAdresseFiscale.getPays()).isEqualTo(UPDATED_PAYS);
+        assertThat(testAdresseFiscale.getAffichageInternet()).isEqualTo(UPDATED_AFFICHAGE_INTERNET);
+        assertThat(testAdresseFiscale.getAffichageIntranet()).isEqualTo(DEFAULT_AFFICHAGE_INTRANET);
     }
 
     @Test
@@ -375,15 +398,17 @@ class AdresseFiscaleResourceIT {
         partialUpdatedAdresseFiscale.setId(adresseFiscale.getId());
 
         partialUpdatedAdresseFiscale
-            .label(UPDATED_LABEL)
             .numero(UPDATED_NUMERO)
+            .bister(UPDATED_BISTER)
+            .complement1(UPDATED_COMPLEMENT_1)
+            .complement2(UPDATED_COMPLEMENT_2)
+            .typeVoie(UPDATED_TYPE_VOIE)
             .voie(UPDATED_VOIE)
             .codePostal(UPDATED_CODE_POSTAL)
             .ville(UPDATED_VILLE)
             .pays(UPDATED_PAYS)
-            .localisation(UPDATED_LOCALISATION)
-            .modeManuel(UPDATED_MODE_MANUEL)
-            .type(UPDATED_TYPE);
+            .affichageInternet(UPDATED_AFFICHAGE_INTERNET)
+            .affichageIntranet(UPDATED_AFFICHAGE_INTRANET);
 
         restAdresseFiscaleMockMvc
             .perform(
@@ -397,15 +422,17 @@ class AdresseFiscaleResourceIT {
         List<AdresseFiscale> adresseFiscaleList = adresseFiscaleRepository.findAll();
         assertThat(adresseFiscaleList).hasSize(databaseSizeBeforeUpdate);
         AdresseFiscale testAdresseFiscale = adresseFiscaleList.get(adresseFiscaleList.size() - 1);
-        assertThat(testAdresseFiscale.getLabel()).isEqualTo(UPDATED_LABEL);
         assertThat(testAdresseFiscale.getNumero()).isEqualTo(UPDATED_NUMERO);
+        assertThat(testAdresseFiscale.getBister()).isEqualTo(UPDATED_BISTER);
+        assertThat(testAdresseFiscale.getComplement1()).isEqualTo(UPDATED_COMPLEMENT_1);
+        assertThat(testAdresseFiscale.getComplement2()).isEqualTo(UPDATED_COMPLEMENT_2);
+        assertThat(testAdresseFiscale.getTypeVoie()).isEqualTo(UPDATED_TYPE_VOIE);
         assertThat(testAdresseFiscale.getVoie()).isEqualTo(UPDATED_VOIE);
         assertThat(testAdresseFiscale.getCodePostal()).isEqualTo(UPDATED_CODE_POSTAL);
         assertThat(testAdresseFiscale.getVille()).isEqualTo(UPDATED_VILLE);
         assertThat(testAdresseFiscale.getPays()).isEqualTo(UPDATED_PAYS);
-        assertThat(testAdresseFiscale.getLocalisation()).isEqualTo(UPDATED_LOCALISATION);
-        assertThat(testAdresseFiscale.getModeManuel()).isEqualTo(UPDATED_MODE_MANUEL);
-        assertThat(testAdresseFiscale.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testAdresseFiscale.getAffichageInternet()).isEqualTo(UPDATED_AFFICHAGE_INTERNET);
+        assertThat(testAdresseFiscale.getAffichageIntranet()).isEqualTo(UPDATED_AFFICHAGE_INTRANET);
     }
 
     @Test

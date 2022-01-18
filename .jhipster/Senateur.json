@@ -22,6 +22,12 @@
       "otherEntityRelationshipName": "senateur",
       "relationshipName": "mandats",
       "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "decoration",
+      "otherEntityRelationshipName": "senateur",
+      "relationshipName": "decorations"
     }
   ],
   "entityTableName": "senateur",

@@ -22,11 +22,20 @@ public class AdressePostale2 implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "label")
-    private String label;
-
     @Column(name = "numero")
     private String numero;
+
+    @Column(name = "bister")
+    private String bister;
+
+    @Column(name = "complement_1")
+    private String complement1;
+
+    @Column(name = "complement_2")
+    private String complement2;
+
+    @Column(name = "type_voie")
+    private String typeVoie;
 
     @Column(name = "voie")
     private String voie;
@@ -40,14 +49,11 @@ public class AdressePostale2 implements Serializable {
     @Column(name = "pays")
     private String pays;
 
-    @Column(name = "localisation")
-    private String localisation;
+    @Column(name = "affichage_internet")
+    private Boolean affichageInternet;
 
-    @Column(name = "mode_manuel")
-    private Boolean modeManuel;
-
-    @Column(name = "type")
-    private String type;
+    @Column(name = "affichage_intranet")
+    private Boolean affichageIntranet;
 
     @JsonIgnoreProperties(value = { "adresseFiscale", "adressePostale", "adressePostale2", "senateur" }, allowSetters = true)
     @OneToOne(mappedBy = "adressePostale2")
@@ -68,19 +74,6 @@ public class AdressePostale2 implements Serializable {
         this.id = id;
     }
 
-    public String getLabel() {
-        return this.label;
-    }
-
-    public AdressePostale2 label(String label) {
-        this.setLabel(label);
-        return this;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
     public String getNumero() {
         return this.numero;
     }
@@ -92,6 +85,58 @@ public class AdressePostale2 implements Serializable {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public String getBister() {
+        return this.bister;
+    }
+
+    public AdressePostale2 bister(String bister) {
+        this.setBister(bister);
+        return this;
+    }
+
+    public void setBister(String bister) {
+        this.bister = bister;
+    }
+
+    public String getComplement1() {
+        return this.complement1;
+    }
+
+    public AdressePostale2 complement1(String complement1) {
+        this.setComplement1(complement1);
+        return this;
+    }
+
+    public void setComplement1(String complement1) {
+        this.complement1 = complement1;
+    }
+
+    public String getComplement2() {
+        return this.complement2;
+    }
+
+    public AdressePostale2 complement2(String complement2) {
+        this.setComplement2(complement2);
+        return this;
+    }
+
+    public void setComplement2(String complement2) {
+        this.complement2 = complement2;
+    }
+
+    public String getTypeVoie() {
+        return this.typeVoie;
+    }
+
+    public AdressePostale2 typeVoie(String typeVoie) {
+        this.setTypeVoie(typeVoie);
+        return this;
+    }
+
+    public void setTypeVoie(String typeVoie) {
+        this.typeVoie = typeVoie;
     }
 
     public String getVoie() {
@@ -146,43 +191,30 @@ public class AdressePostale2 implements Serializable {
         this.pays = pays;
     }
 
-    public String getLocalisation() {
-        return this.localisation;
+    public Boolean getAffichageInternet() {
+        return this.affichageInternet;
     }
 
-    public AdressePostale2 localisation(String localisation) {
-        this.setLocalisation(localisation);
+    public AdressePostale2 affichageInternet(Boolean affichageInternet) {
+        this.setAffichageInternet(affichageInternet);
         return this;
     }
 
-    public void setLocalisation(String localisation) {
-        this.localisation = localisation;
+    public void setAffichageInternet(Boolean affichageInternet) {
+        this.affichageInternet = affichageInternet;
     }
 
-    public Boolean getModeManuel() {
-        return this.modeManuel;
+    public Boolean getAffichageIntranet() {
+        return this.affichageIntranet;
     }
 
-    public AdressePostale2 modeManuel(Boolean modeManuel) {
-        this.setModeManuel(modeManuel);
+    public AdressePostale2 affichageIntranet(Boolean affichageIntranet) {
+        this.setAffichageIntranet(affichageIntranet);
         return this;
     }
 
-    public void setModeManuel(Boolean modeManuel) {
-        this.modeManuel = modeManuel;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    public AdressePostale2 type(String type) {
-        this.setType(type);
-        return this;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setAffichageIntranet(Boolean affichageIntranet) {
+        this.affichageIntranet = affichageIntranet;
     }
 
     public Adresses getAdresses() {
@@ -228,15 +260,17 @@ public class AdressePostale2 implements Serializable {
     public String toString() {
         return "AdressePostale2{" +
             "id=" + getId() +
-            ", label='" + getLabel() + "'" +
             ", numero='" + getNumero() + "'" +
+            ", bister='" + getBister() + "'" +
+            ", complement1='" + getComplement1() + "'" +
+            ", complement2='" + getComplement2() + "'" +
+            ", typeVoie='" + getTypeVoie() + "'" +
             ", voie='" + getVoie() + "'" +
             ", codePostal='" + getCodePostal() + "'" +
             ", ville='" + getVille() + "'" +
             ", pays='" + getPays() + "'" +
-            ", localisation='" + getLocalisation() + "'" +
-            ", modeManuel='" + getModeManuel() + "'" +
-            ", type='" + getType() + "'" +
+            ", affichageInternet='" + getAffichageInternet() + "'" +
+            ", affichageIntranet='" + getAffichageIntranet() + "'" +
             "}";
     }
 }

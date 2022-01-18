@@ -7,16 +7,34 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="$t('irsenApp.adressePostale2.label')">Label</span>
-          </dt>
-          <dd>
-            <span>{{ adressePostale2.label }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('irsenApp.adressePostale2.numero')">Numero</span>
           </dt>
           <dd>
             <span>{{ adressePostale2.numero }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.adressePostale2.bister')">Bister</span>
+          </dt>
+          <dd>
+            <span>{{ adressePostale2.bister }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.adressePostale2.complement1')">Complement 1</span>
+          </dt>
+          <dd>
+            <span>{{ adressePostale2.complement1 }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.adressePostale2.complement2')">Complement 2</span>
+          </dt>
+          <dd>
+            <span>{{ adressePostale2.complement2 }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.adressePostale2.typeVoie')">Type Voie</span>
+          </dt>
+          <dd>
+            <span>{{ adressePostale2.typeVoie }}</span>
           </dd>
           <dt>
             <span v-text="$t('irsenApp.adressePostale2.voie')">Voie</span>
@@ -43,22 +61,16 @@
             <span>{{ adressePostale2.pays }}</span>
           </dd>
           <dt>
-            <span v-text="$t('irsenApp.adressePostale2.localisation')">Localisation</span>
+            <span v-text="$t('irsenApp.adressePostale2.affichageInternet')">Affichage Internet</span>
           </dt>
           <dd>
-            <span>{{ adressePostale2.localisation }}</span>
+            <span>{{ adressePostale2.affichageInternet }}</span>
           </dd>
           <dt>
-            <span v-text="$t('irsenApp.adressePostale2.modeManuel')">Mode Manuel</span>
+            <span v-text="$t('irsenApp.adressePostale2.affichageIntranet')">Affichage Intranet</span>
           </dt>
           <dd>
-            <span>{{ adressePostale2.modeManuel }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('irsenApp.adressePostale2.type')">Type</span>
-          </dt>
-          <dd>
-            <span>{{ adressePostale2.type }}</span>
+            <span>{{ adressePostale2.affichageIntranet }}</span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

@@ -34,7 +34,18 @@ public class PaysNaissance implements Serializable {
     @Column(name = "article")
     private String article;
 
-    @JsonIgnoreProperties(value = { "departementNaissance", "paysNaissance", "categorieSocioProf", "senateur" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = {
+            "departementNaissance",
+            "paysNaissance",
+            "categorieSocioProf",
+            "telephonePortable",
+            "telephonePortable2",
+            "telephoneFixe",
+            "senateur",
+        },
+        allowSetters = true
+    )
     @OneToOne(mappedBy = "paysNaissance")
     private EtatCivil etatCivil;
 

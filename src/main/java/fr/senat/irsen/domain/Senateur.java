@@ -2,6 +2,8 @@ package fr.senat.irsen.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -22,7 +24,18 @@ public class Senateur implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @JsonIgnoreProperties(value = { "departementNaissance", "paysNaissance", "categorieSocioProf", "senateur" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = {
+            "departementNaissance",
+            "paysNaissance",
+            "categorieSocioProf",
+            "telephonePortable",
+            "telephonePortable2",
+            "telephoneFixe",
+            "senateur",
+        },
+        allowSetters = true
+    )
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private EtatCivil etatCivil;
@@ -36,6 +49,11 @@ public class Senateur implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private Mandat mandats;
+
+    @OneToMany(mappedBy = "senateur")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "senateur" }, allowSetters = true)
+    private Set<Decoration> decorations = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -88,6 +106,37 @@ public class Senateur implements Serializable {
 
     public Senateur mandats(Mandat mandat) {
         this.setMandats(mandat);
+        return this;
+    }
+
+    public Set<Decoration> getDecorations() {
+        return this.decorations;
+    }
+
+    public void setDecorations(Set<Decoration> decorations) {
+        if (this.decorations != null) {
+            this.decorations.forEach(i -> i.setSenateur(null));
+        }
+        if (decorations != null) {
+            decorations.forEach(i -> i.setSenateur(this));
+        }
+        this.decorations = decorations;
+    }
+
+    public Senateur decorations(Set<Decoration> decorations) {
+        this.setDecorations(decorations);
+        return this;
+    }
+
+    public Senateur addDecorations(Decoration decoration) {
+        this.decorations.add(decoration);
+        decoration.setSenateur(this);
+        return this;
+    }
+
+    public Senateur removeDecorations(Decoration decoration) {
+        this.decorations.remove(decoration);
+        decoration.setSenateur(null);
         return this;
     }
 

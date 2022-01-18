@@ -1,0 +1,26 @@
+{
+  "irsenApp": {
+    "telephonePortable2": {
+      "home": {
+        "title": "TelephonePortable2s",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Telephone Portable 2",
+        "createOrEditLabel": "Créer ou éditer un Telephone Portable 2",
+        "notFound": "Aucun Telephone Portable 2 trouvé"
+      },
+      "created": "Un nouveau Telephone Portable 2 a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Telephone Portable 2 avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Telephone Portable 2 avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Telephone Portable 2 {{ id }} ?"
+      },
+      "detail": {
+        "title": "Telephone Portable 2"
+      },
+      "id": "ID",
+      "type": "Type",
+      "numero": "Numero",
+      "etatCivil": "Etat Civil"
+    }
+  }
+}

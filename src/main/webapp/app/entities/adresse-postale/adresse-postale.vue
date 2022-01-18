@@ -29,15 +29,17 @@
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.adressePostale.label')">Label</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adressePostale.numero')">Numero</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adressePostale.bister')">Bister</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adressePostale.complement1')">Complement 1</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adressePostale.complement2')">Complement 2</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adressePostale.typeVoie')">Type Voie</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adressePostale.voie')">Voie</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adressePostale.codePostal')">Code Postal</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adressePostale.ville')">Ville</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adressePostale.pays')">Pays</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.adressePostale.localisation')">Localisation</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.adressePostale.modeManuel')">Mode Manuel</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.adressePostale.type')">Type</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adressePostale.affichageInternet')">Affichage Internet</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adressePostale.affichageIntranet')">Affichage Intranet</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -48,15 +50,17 @@
                 adressePostale.id
               }}</router-link>
             </td>
-            <td>{{ adressePostale.label }}</td>
             <td>{{ adressePostale.numero }}</td>
+            <td>{{ adressePostale.bister }}</td>
+            <td>{{ adressePostale.complement1 }}</td>
+            <td>{{ adressePostale.complement2 }}</td>
+            <td>{{ adressePostale.typeVoie }}</td>
             <td>{{ adressePostale.voie }}</td>
             <td>{{ adressePostale.codePostal }}</td>
             <td>{{ adressePostale.ville }}</td>
             <td>{{ adressePostale.pays }}</td>
-            <td>{{ adressePostale.localisation }}</td>
-            <td>{{ adressePostale.modeManuel }}</td>
-            <td>{{ adressePostale.type }}</td>
+            <td>{{ adressePostale.affichageInternet }}</td>
+            <td>{{ adressePostale.affichageIntranet }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link

@@ -47,9 +47,6 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
-        'AAAAAAA',
-        'AAAAAAA',
-        'AAAAAAA',
         'AAAAAAA'
       );
     });
@@ -127,9 +124,6 @@ describe('Service Tests', () => {
             profession: 'BBBBBB',
             courriel: 'BBBBBB',
             courriel2: 'BBBBBB',
-            telephonePortable: 'BBBBBB',
-            telephonePortable2: 'BBBBBB',
-            telephoneFixe: 'BBBBBB',
           },
           elemDefault
         );
@@ -167,7 +161,6 @@ describe('Service Tests', () => {
             communeNaissance: 'BBBBBB',
             courriel: 'BBBBBB',
             courriel2: 'BBBBBB',
-            telephonePortable2: 'BBBBBB',
           },
           new EtatCivil()
         );
@@ -213,9 +206,6 @@ describe('Service Tests', () => {
             profession: 'BBBBBB',
             courriel: 'BBBBBB',
             courriel2: 'BBBBBB',
-            telephonePortable: 'BBBBBB',
-            telephonePortable2: 'BBBBBB',
-            telephoneFixe: 'BBBBBB',
           },
           elemDefault
         );

@@ -70,15 +70,6 @@ class EtatCivilResourceIT {
     private static final String DEFAULT_COURRIEL_2 = "AAAAAAAAAA";
     private static final String UPDATED_COURRIEL_2 = "BBBBBBBBBB";
 
-    private static final String DEFAULT_TELEPHONE_PORTABLE = "AAAAAAAAAA";
-    private static final String UPDATED_TELEPHONE_PORTABLE = "BBBBBBBBBB";
-
-    private static final String DEFAULT_TELEPHONE_PORTABLE_2 = "AAAAAAAAAA";
-    private static final String UPDATED_TELEPHONE_PORTABLE_2 = "BBBBBBBBBB";
-
-    private static final String DEFAULT_TELEPHONE_FIXE = "AAAAAAAAAA";
-    private static final String UPDATED_TELEPHONE_FIXE = "BBBBBBBBBB";
-
     private static final String ENTITY_API_URL = "/api/etat-civils";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -116,10 +107,7 @@ class EtatCivilResourceIT {
             .communeNaissance(DEFAULT_COMMUNE_NAISSANCE)
             .profession(DEFAULT_PROFESSION)
             .courriel(DEFAULT_COURRIEL)
-            .courriel2(DEFAULT_COURRIEL_2)
-            .telephonePortable(DEFAULT_TELEPHONE_PORTABLE)
-            .telephonePortable2(DEFAULT_TELEPHONE_PORTABLE_2)
-            .telephoneFixe(DEFAULT_TELEPHONE_FIXE);
+            .courriel2(DEFAULT_COURRIEL_2);
         return etatCivil;
     }
 
@@ -143,10 +131,7 @@ class EtatCivilResourceIT {
             .communeNaissance(UPDATED_COMMUNE_NAISSANCE)
             .profession(UPDATED_PROFESSION)
             .courriel(UPDATED_COURRIEL)
-            .courriel2(UPDATED_COURRIEL_2)
-            .telephonePortable(UPDATED_TELEPHONE_PORTABLE)
-            .telephonePortable2(UPDATED_TELEPHONE_PORTABLE_2)
-            .telephoneFixe(UPDATED_TELEPHONE_FIXE);
+            .courriel2(UPDATED_COURRIEL_2);
         return etatCivil;
     }
 
@@ -181,9 +166,6 @@ class EtatCivilResourceIT {
         assertThat(testEtatCivil.getProfession()).isEqualTo(DEFAULT_PROFESSION);
         assertThat(testEtatCivil.getCourriel()).isEqualTo(DEFAULT_COURRIEL);
         assertThat(testEtatCivil.getCourriel2()).isEqualTo(DEFAULT_COURRIEL_2);
-        assertThat(testEtatCivil.getTelephonePortable()).isEqualTo(DEFAULT_TELEPHONE_PORTABLE);
-        assertThat(testEtatCivil.getTelephonePortable2()).isEqualTo(DEFAULT_TELEPHONE_PORTABLE_2);
-        assertThat(testEtatCivil.getTelephoneFixe()).isEqualTo(DEFAULT_TELEPHONE_FIXE);
     }
 
     @Test
@@ -228,10 +210,7 @@ class EtatCivilResourceIT {
             .andExpect(jsonPath("$.[*].communeNaissance").value(hasItem(DEFAULT_COMMUNE_NAISSANCE)))
             .andExpect(jsonPath("$.[*].profession").value(hasItem(DEFAULT_PROFESSION)))
             .andExpect(jsonPath("$.[*].courriel").value(hasItem(DEFAULT_COURRIEL)))
-            .andExpect(jsonPath("$.[*].courriel2").value(hasItem(DEFAULT_COURRIEL_2)))
-            .andExpect(jsonPath("$.[*].telephonePortable").value(hasItem(DEFAULT_TELEPHONE_PORTABLE)))
-            .andExpect(jsonPath("$.[*].telephonePortable2").value(hasItem(DEFAULT_TELEPHONE_PORTABLE_2)))
-            .andExpect(jsonPath("$.[*].telephoneFixe").value(hasItem(DEFAULT_TELEPHONE_FIXE)));
+            .andExpect(jsonPath("$.[*].courriel2").value(hasItem(DEFAULT_COURRIEL_2)));
     }
 
     @Test
@@ -258,10 +237,7 @@ class EtatCivilResourceIT {
             .andExpect(jsonPath("$.communeNaissance").value(DEFAULT_COMMUNE_NAISSANCE))
             .andExpect(jsonPath("$.profession").value(DEFAULT_PROFESSION))
             .andExpect(jsonPath("$.courriel").value(DEFAULT_COURRIEL))
-            .andExpect(jsonPath("$.courriel2").value(DEFAULT_COURRIEL_2))
-            .andExpect(jsonPath("$.telephonePortable").value(DEFAULT_TELEPHONE_PORTABLE))
-            .andExpect(jsonPath("$.telephonePortable2").value(DEFAULT_TELEPHONE_PORTABLE_2))
-            .andExpect(jsonPath("$.telephoneFixe").value(DEFAULT_TELEPHONE_FIXE));
+            .andExpect(jsonPath("$.courriel2").value(DEFAULT_COURRIEL_2));
     }
 
     @Test
@@ -296,10 +272,7 @@ class EtatCivilResourceIT {
             .communeNaissance(UPDATED_COMMUNE_NAISSANCE)
             .profession(UPDATED_PROFESSION)
             .courriel(UPDATED_COURRIEL)
-            .courriel2(UPDATED_COURRIEL_2)
-            .telephonePortable(UPDATED_TELEPHONE_PORTABLE)
-            .telephonePortable2(UPDATED_TELEPHONE_PORTABLE_2)
-            .telephoneFixe(UPDATED_TELEPHONE_FIXE);
+            .courriel2(UPDATED_COURRIEL_2);
 
         restEtatCivilMockMvc
             .perform(
@@ -326,9 +299,6 @@ class EtatCivilResourceIT {
         assertThat(testEtatCivil.getProfession()).isEqualTo(UPDATED_PROFESSION);
         assertThat(testEtatCivil.getCourriel()).isEqualTo(UPDATED_COURRIEL);
         assertThat(testEtatCivil.getCourriel2()).isEqualTo(UPDATED_COURRIEL_2);
-        assertThat(testEtatCivil.getTelephonePortable()).isEqualTo(UPDATED_TELEPHONE_PORTABLE);
-        assertThat(testEtatCivil.getTelephonePortable2()).isEqualTo(UPDATED_TELEPHONE_PORTABLE_2);
-        assertThat(testEtatCivil.getTelephoneFixe()).isEqualTo(UPDATED_TELEPHONE_FIXE);
     }
 
     @Test
@@ -409,8 +379,7 @@ class EtatCivilResourceIT {
             .prenoms(UPDATED_PRENOMS)
             .communeNaissance(UPDATED_COMMUNE_NAISSANCE)
             .profession(UPDATED_PROFESSION)
-            .courriel2(UPDATED_COURRIEL_2)
-            .telephonePortable2(UPDATED_TELEPHONE_PORTABLE_2);
+            .courriel2(UPDATED_COURRIEL_2);
 
         restEtatCivilMockMvc
             .perform(
@@ -437,9 +406,6 @@ class EtatCivilResourceIT {
         assertThat(testEtatCivil.getProfession()).isEqualTo(UPDATED_PROFESSION);
         assertThat(testEtatCivil.getCourriel()).isEqualTo(DEFAULT_COURRIEL);
         assertThat(testEtatCivil.getCourriel2()).isEqualTo(UPDATED_COURRIEL_2);
-        assertThat(testEtatCivil.getTelephonePortable()).isEqualTo(DEFAULT_TELEPHONE_PORTABLE);
-        assertThat(testEtatCivil.getTelephonePortable2()).isEqualTo(UPDATED_TELEPHONE_PORTABLE_2);
-        assertThat(testEtatCivil.getTelephoneFixe()).isEqualTo(DEFAULT_TELEPHONE_FIXE);
     }
 
     @Test
@@ -467,10 +433,7 @@ class EtatCivilResourceIT {
             .communeNaissance(UPDATED_COMMUNE_NAISSANCE)
             .profession(UPDATED_PROFESSION)
             .courriel(UPDATED_COURRIEL)
-            .courriel2(UPDATED_COURRIEL_2)
-            .telephonePortable(UPDATED_TELEPHONE_PORTABLE)
-            .telephonePortable2(UPDATED_TELEPHONE_PORTABLE_2)
-            .telephoneFixe(UPDATED_TELEPHONE_FIXE);
+            .courriel2(UPDATED_COURRIEL_2);
 
         restEtatCivilMockMvc
             .perform(
@@ -497,9 +460,6 @@ class EtatCivilResourceIT {
         assertThat(testEtatCivil.getProfession()).isEqualTo(UPDATED_PROFESSION);
         assertThat(testEtatCivil.getCourriel()).isEqualTo(UPDATED_COURRIEL);
         assertThat(testEtatCivil.getCourriel2()).isEqualTo(UPDATED_COURRIEL_2);
-        assertThat(testEtatCivil.getTelephonePortable()).isEqualTo(UPDATED_TELEPHONE_PORTABLE);
-        assertThat(testEtatCivil.getTelephonePortable2()).isEqualTo(UPDATED_TELEPHONE_PORTABLE_2);
-        assertThat(testEtatCivil.getTelephoneFixe()).isEqualTo(UPDATED_TELEPHONE_FIXE);
     }
 
     @Test

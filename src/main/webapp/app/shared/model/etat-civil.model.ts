@@ -1,6 +1,9 @@
 import { IDepartementNaissance } from '@/shared/model/departement-naissance.model';
 import { IPaysNaissance } from '@/shared/model/pays-naissance.model';
 import { ICategorieSocioProf } from '@/shared/model/categorie-socio-prof.model';
+import { ITelephonePortable } from '@/shared/model/telephone-portable.model';
+import { ITelephonePortable2 } from '@/shared/model/telephone-portable-2.model';
+import { ITelephoneFixe } from '@/shared/model/telephone-fixe.model';
 import { ISenateur } from '@/shared/model/senateur.model';
 
 export interface IEtatCivil {
@@ -18,12 +21,12 @@ export interface IEtatCivil {
   profession?: string | null;
   courriel?: string | null;
   courriel2?: string | null;
-  telephonePortable?: string | null;
-  telephonePortable2?: string | null;
-  telephoneFixe?: string | null;
   departementNaissance?: IDepartementNaissance | null;
   paysNaissance?: IPaysNaissance | null;
   categorieSocioProf?: ICategorieSocioProf | null;
+  telephonePortable?: ITelephonePortable | null;
+  telephonePortable2?: ITelephonePortable2 | null;
+  telephoneFixe?: ITelephoneFixe | null;
   senateur?: ISenateur | null;
 }
 
@@ -43,12 +46,12 @@ export class EtatCivil implements IEtatCivil {
     public profession?: string | null,
     public courriel?: string | null,
     public courriel2?: string | null,
-    public telephonePortable?: string | null,
-    public telephonePortable2?: string | null,
-    public telephoneFixe?: string | null,
     public departementNaissance?: IDepartementNaissance | null,
     public paysNaissance?: IPaysNaissance | null,
     public categorieSocioProf?: ICategorieSocioProf | null,
+    public telephonePortable?: ITelephonePortable | null,
+    public telephonePortable2?: ITelephonePortable2 | null,
+    public telephoneFixe?: ITelephoneFixe | null,
     public senateur?: ISenateur | null
   ) {}
 }

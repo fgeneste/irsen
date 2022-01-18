@@ -57,9 +57,13 @@
       "FonctionEnCours",
       "Mandat",
       "MandatAncien",
-      "MandatEnCours"
+      "MandatEnCours",
+      "Decoration",
+      "TelephonePortable",
+      "TelephonePortable2",
+      "TelephoneFixe"
     ],
-    "lastLiquibaseTimestamp": 1641826392000
+    "lastLiquibaseTimestamp": 1642499467000
   },
   "git-provider": "GitHub",
   "git-company": "fgeneste",

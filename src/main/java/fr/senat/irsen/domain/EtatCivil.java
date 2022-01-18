@@ -62,15 +62,6 @@ public class EtatCivil implements Serializable {
     @Column(name = "courriel_2")
     private String courriel2;
 
-    @Column(name = "telephone_portable")
-    private String telephonePortable;
-
-    @Column(name = "telephone_portable_2")
-    private String telephonePortable2;
-
-    @Column(name = "telephone_fixe")
-    private String telephoneFixe;
-
     @JsonIgnoreProperties(value = { "etatCivil" }, allowSetters = true)
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
@@ -86,7 +77,22 @@ public class EtatCivil implements Serializable {
     @JoinColumn(unique = true)
     private CategorieSocioProf categorieSocioProf;
 
-    @JsonIgnoreProperties(value = { "etatCivil", "adresses", "mandats" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "etatCivil" }, allowSetters = true)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private TelephonePortable telephonePortable;
+
+    @JsonIgnoreProperties(value = { "etatCivil" }, allowSetters = true)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private TelephonePortable2 telephonePortable2;
+
+    @JsonIgnoreProperties(value = { "etatCivil" }, allowSetters = true)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private TelephoneFixe telephoneFixe;
+
+    @JsonIgnoreProperties(value = { "etatCivil", "adresses", "mandats", "decorations" }, allowSetters = true)
     @OneToOne(mappedBy = "etatCivil")
     private Senateur senateur;
 
@@ -274,45 +280,6 @@ public class EtatCivil implements Serializable {
         this.courriel2 = courriel2;
     }
 
-    public String getTelephonePortable() {
-        return this.telephonePortable;
-    }
-
-    public EtatCivil telephonePortable(String telephonePortable) {
-        this.setTelephonePortable(telephonePortable);
-        return this;
-    }
-
-    public void setTelephonePortable(String telephonePortable) {
-        this.telephonePortable = telephonePortable;
-    }
-
-    public String getTelephonePortable2() {
-        return this.telephonePortable2;
-    }
-
-    public EtatCivil telephonePortable2(String telephonePortable2) {
-        this.setTelephonePortable2(telephonePortable2);
-        return this;
-    }
-
-    public void setTelephonePortable2(String telephonePortable2) {
-        this.telephonePortable2 = telephonePortable2;
-    }
-
-    public String getTelephoneFixe() {
-        return this.telephoneFixe;
-    }
-
-    public EtatCivil telephoneFixe(String telephoneFixe) {
-        this.setTelephoneFixe(telephoneFixe);
-        return this;
-    }
-
-    public void setTelephoneFixe(String telephoneFixe) {
-        this.telephoneFixe = telephoneFixe;
-    }
-
     public DepartementNaissance getDepartementNaissance() {
         return this.departementNaissance;
     }
@@ -349,6 +316,45 @@ public class EtatCivil implements Serializable {
 
     public EtatCivil categorieSocioProf(CategorieSocioProf categorieSocioProf) {
         this.setCategorieSocioProf(categorieSocioProf);
+        return this;
+    }
+
+    public TelephonePortable getTelephonePortable() {
+        return this.telephonePortable;
+    }
+
+    public void setTelephonePortable(TelephonePortable telephonePortable) {
+        this.telephonePortable = telephonePortable;
+    }
+
+    public EtatCivil telephonePortable(TelephonePortable telephonePortable) {
+        this.setTelephonePortable(telephonePortable);
+        return this;
+    }
+
+    public TelephonePortable2 getTelephonePortable2() {
+        return this.telephonePortable2;
+    }
+
+    public void setTelephonePortable2(TelephonePortable2 telephonePortable2) {
+        this.telephonePortable2 = telephonePortable2;
+    }
+
+    public EtatCivil telephonePortable2(TelephonePortable2 telephonePortable2) {
+        this.setTelephonePortable2(telephonePortable2);
+        return this;
+    }
+
+    public TelephoneFixe getTelephoneFixe() {
+        return this.telephoneFixe;
+    }
+
+    public void setTelephoneFixe(TelephoneFixe telephoneFixe) {
+        this.telephoneFixe = telephoneFixe;
+    }
+
+    public EtatCivil telephoneFixe(TelephoneFixe telephoneFixe) {
+        this.setTelephoneFixe(telephoneFixe);
         return this;
     }
 
@@ -408,9 +414,6 @@ public class EtatCivil implements Serializable {
             ", profession='" + getProfession() + "'" +
             ", courriel='" + getCourriel() + "'" +
             ", courriel2='" + getCourriel2() + "'" +
-            ", telephonePortable='" + getTelephonePortable() + "'" +
-            ", telephonePortable2='" + getTelephonePortable2() + "'" +
-            ", telephoneFixe='" + getTelephoneFixe() + "'" +
             "}";
     }
 }

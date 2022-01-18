@@ -1,0 +1,32 @@
+{
+  "name": "TelephonePortable",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numero",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "etatCivil",
+      "otherEntityRelationshipName": "telephonePortable",
+      "relationshipName": "etatCivil",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "telephone_portable",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220118095105"
+}

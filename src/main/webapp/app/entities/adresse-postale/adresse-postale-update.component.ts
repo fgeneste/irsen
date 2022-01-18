@@ -10,15 +10,17 @@ import AdressePostaleService from './adresse-postale.service';
 
 const validations: any = {
   adressePostale: {
-    label: {},
     numero: {},
+    bister: {},
+    complement1: {},
+    complement2: {},
+    typeVoie: {},
     voie: {},
     codePostal: {},
     ville: {},
     pays: {},
-    localisation: {},
-    modeManuel: {},
-    type: {},
+    affichageInternet: {},
+    affichageIntranet: {},
   },
 };
 

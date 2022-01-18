@@ -37,7 +37,7 @@ public class Adresses implements Serializable {
     @JoinColumn(unique = true)
     private AdressePostale2 adressePostale2;
 
-    @JsonIgnoreProperties(value = { "etatCivil", "adresses", "mandats" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "etatCivil", "adresses", "mandats", "decorations" }, allowSetters = true)
     @OneToOne(mappedBy = "adresses")
     private Senateur senateur;
 

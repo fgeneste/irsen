@@ -29,7 +29,20 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new AdressePostale2Service();
-      elemDefault = new AdressePostale2(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, 'AAAAAAA');
+      elemDefault = new AdressePostale2(
+        123,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        false,
+        false
+      );
     });
 
     describe('Service methods', () => {
@@ -81,15 +94,17 @@ describe('Service Tests', () => {
       it('should update a AdressePostale2', async () => {
         const returnedFromService = Object.assign(
           {
-            label: 'BBBBBB',
             numero: 'BBBBBB',
+            bister: 'BBBBBB',
+            complement1: 'BBBBBB',
+            complement2: 'BBBBBB',
+            typeVoie: 'BBBBBB',
             voie: 'BBBBBB',
             codePostal: 'BBBBBB',
             ville: 'BBBBBB',
             pays: 'BBBBBB',
-            localisation: 'BBBBBB',
-            modeManuel: true,
-            type: 'BBBBBB',
+            affichageInternet: true,
+            affichageIntranet: true,
           },
           elemDefault
         );
@@ -116,9 +131,10 @@ describe('Service Tests', () => {
       it('should partial update a AdressePostale2', async () => {
         const patchObject = Object.assign(
           {
-            label: 'BBBBBB',
             numero: 'BBBBBB',
-            ville: 'BBBBBB',
+            bister: 'BBBBBB',
+            typeVoie: 'BBBBBB',
+            affichageIntranet: true,
           },
           new AdressePostale2()
         );
@@ -146,15 +162,17 @@ describe('Service Tests', () => {
       it('should return a list of AdressePostale2', async () => {
         const returnedFromService = Object.assign(
           {
-            label: 'BBBBBB',
             numero: 'BBBBBB',
+            bister: 'BBBBBB',
+            complement1: 'BBBBBB',
+            complement2: 'BBBBBB',
+            typeVoie: 'BBBBBB',
             voie: 'BBBBBB',
             codePostal: 'BBBBBB',
             ville: 'BBBBBB',
             pays: 'BBBBBB',
-            localisation: 'BBBBBB',
-            modeManuel: true,
-            type: 'BBBBBB',
+            affichageInternet: true,
+            affichageIntranet: true,
           },
           elemDefault
         );

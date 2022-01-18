@@ -87,6 +87,30 @@ const MandatEnCours = () => import('@/entities/mandat-en-cours/mandat-en-cours.v
 const MandatEnCoursUpdate = () => import('@/entities/mandat-en-cours/mandat-en-cours-update.vue');
 // prettier-ignore
 const MandatEnCoursDetails = () => import('@/entities/mandat-en-cours/mandat-en-cours-details.vue');
+// prettier-ignore
+const Decoration = () => import('@/entities/decoration/decoration.vue');
+// prettier-ignore
+const DecorationUpdate = () => import('@/entities/decoration/decoration-update.vue');
+// prettier-ignore
+const DecorationDetails = () => import('@/entities/decoration/decoration-details.vue');
+// prettier-ignore
+const TelephonePortable = () => import('@/entities/telephone-portable/telephone-portable.vue');
+// prettier-ignore
+const TelephonePortableUpdate = () => import('@/entities/telephone-portable/telephone-portable-update.vue');
+// prettier-ignore
+const TelephonePortableDetails = () => import('@/entities/telephone-portable/telephone-portable-details.vue');
+// prettier-ignore
+const TelephonePortable2 = () => import('@/entities/telephone-portable-2/telephone-portable-2.vue');
+// prettier-ignore
+const TelephonePortable2Update = () => import('@/entities/telephone-portable-2/telephone-portable-2-update.vue');
+// prettier-ignore
+const TelephonePortable2Details = () => import('@/entities/telephone-portable-2/telephone-portable-2-details.vue');
+// prettier-ignore
+const TelephoneFixe = () => import('@/entities/telephone-fixe/telephone-fixe.vue');
+// prettier-ignore
+const TelephoneFixeUpdate = () => import('@/entities/telephone-fixe/telephone-fixe-update.vue');
+// prettier-ignore
+const TelephoneFixeDetails = () => import('@/entities/telephone-fixe/telephone-fixe-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default {
@@ -427,6 +451,102 @@ export default {
       path: 'mandat-en-cours/:mandatEnCoursId/view',
       name: 'MandatEnCoursView',
       component: MandatEnCoursDetails,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'decoration',
+      name: 'Decoration',
+      component: Decoration,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'decoration/new',
+      name: 'DecorationCreate',
+      component: DecorationUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'decoration/:decorationId/edit',
+      name: 'DecorationEdit',
+      component: DecorationUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'decoration/:decorationId/view',
+      name: 'DecorationView',
+      component: DecorationDetails,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-portable',
+      name: 'TelephonePortable',
+      component: TelephonePortable,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-portable/new',
+      name: 'TelephonePortableCreate',
+      component: TelephonePortableUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-portable/:telephonePortableId/edit',
+      name: 'TelephonePortableEdit',
+      component: TelephonePortableUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-portable/:telephonePortableId/view',
+      name: 'TelephonePortableView',
+      component: TelephonePortableDetails,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-portable-2',
+      name: 'TelephonePortable2',
+      component: TelephonePortable2,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-portable-2/new',
+      name: 'TelephonePortable2Create',
+      component: TelephonePortable2Update,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-portable-2/:telephonePortable2Id/edit',
+      name: 'TelephonePortable2Edit',
+      component: TelephonePortable2Update,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-portable-2/:telephonePortable2Id/view',
+      name: 'TelephonePortable2View',
+      component: TelephonePortable2Details,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-fixe',
+      name: 'TelephoneFixe',
+      component: TelephoneFixe,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-fixe/new',
+      name: 'TelephoneFixeCreate',
+      component: TelephoneFixeUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-fixe/:telephoneFixeId/edit',
+      name: 'TelephoneFixeEdit',
+      component: TelephoneFixeUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'telephone-fixe/:telephoneFixeId/view',
+      name: 'TelephoneFixeView',
+      component: TelephoneFixeDetails,
       meta: { authorities: [Authority.USER] },
     },
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

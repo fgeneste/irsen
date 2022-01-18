@@ -193,48 +193,6 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.etatCivil.telephonePortable')" for="etat-civil-telephonePortable"
-              >Telephone Portable</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              name="telephonePortable"
-              id="etat-civil-telephonePortable"
-              data-cy="telephonePortable"
-              :class="{ valid: !$v.etatCivil.telephonePortable.$invalid, invalid: $v.etatCivil.telephonePortable.$invalid }"
-              v-model="$v.etatCivil.telephonePortable.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.etatCivil.telephonePortable2')" for="etat-civil-telephonePortable2"
-              >Telephone Portable 2</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              name="telephonePortable2"
-              id="etat-civil-telephonePortable2"
-              data-cy="telephonePortable2"
-              :class="{ valid: !$v.etatCivil.telephonePortable2.$invalid, invalid: $v.etatCivil.telephonePortable2.$invalid }"
-              v-model="$v.etatCivil.telephonePortable2.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.etatCivil.telephoneFixe')" for="etat-civil-telephoneFixe"
-              >Telephone Fixe</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              name="telephoneFixe"
-              id="etat-civil-telephoneFixe"
-              data-cy="telephoneFixe"
-              :class="{ valid: !$v.etatCivil.telephoneFixe.$invalid, invalid: $v.etatCivil.telephoneFixe.$invalid }"
-              v-model="$v.etatCivil.telephoneFixe.$model"
-            />
-          </div>
-          <div class="form-group">
             <label class="form-control-label" v-text="$t('irsenApp.etatCivil.departementNaissance')" for="etat-civil-departementNaissance"
               >Departement Naissance</label
             >
@@ -306,6 +264,81 @@
                 :key="categorieSocioProfOption.id"
               >
                 {{ categorieSocioProfOption.id }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.etatCivil.telephonePortable')" for="etat-civil-telephonePortable"
+              >Telephone Portable</label
+            >
+            <select
+              class="form-control"
+              id="etat-civil-telephonePortable"
+              data-cy="telephonePortable"
+              name="telephonePortable"
+              v-model="etatCivil.telephonePortable"
+            >
+              <option v-bind:value="null"></option>
+              <option
+                v-bind:value="
+                  etatCivil.telephonePortable && telephonePortableOption.id === etatCivil.telephonePortable.id
+                    ? etatCivil.telephonePortable
+                    : telephonePortableOption
+                "
+                v-for="telephonePortableOption in telephonePortables"
+                :key="telephonePortableOption.id"
+              >
+                {{ telephonePortableOption.id }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.etatCivil.telephonePortable2')" for="etat-civil-telephonePortable2"
+              >Telephone Portable 2</label
+            >
+            <select
+              class="form-control"
+              id="etat-civil-telephonePortable2"
+              data-cy="telephonePortable2"
+              name="telephonePortable2"
+              v-model="etatCivil.telephonePortable2"
+            >
+              <option v-bind:value="null"></option>
+              <option
+                v-bind:value="
+                  etatCivil.telephonePortable2 && telephonePortable2Option.id === etatCivil.telephonePortable2.id
+                    ? etatCivil.telephonePortable2
+                    : telephonePortable2Option
+                "
+                v-for="telephonePortable2Option in telephonePortable2s"
+                :key="telephonePortable2Option.id"
+              >
+                {{ telephonePortable2Option.id }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.etatCivil.telephoneFixe')" for="etat-civil-telephoneFixe"
+              >Telephone Fixe</label
+            >
+            <select
+              class="form-control"
+              id="etat-civil-telephoneFixe"
+              data-cy="telephoneFixe"
+              name="telephoneFixe"
+              v-model="etatCivil.telephoneFixe"
+            >
+              <option v-bind:value="null"></option>
+              <option
+                v-bind:value="
+                  etatCivil.telephoneFixe && telephoneFixeOption.id === etatCivil.telephoneFixe.id
+                    ? etatCivil.telephoneFixe
+                    : telephoneFixeOption
+                "
+                v-for="telephoneFixeOption in telephoneFixes"
+                :key="telephoneFixeOption.id"
+              >
+                {{ telephoneFixeOption.id }}
               </option>
             </select>
           </div>

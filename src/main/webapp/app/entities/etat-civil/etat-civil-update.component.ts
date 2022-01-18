@@ -11,6 +11,15 @@ import { IPaysNaissance } from '@/shared/model/pays-naissance.model';
 import CategorieSocioProfService from '@/entities/categorie-socio-prof/categorie-socio-prof.service';
 import { ICategorieSocioProf } from '@/shared/model/categorie-socio-prof.model';
 
+import TelephonePortableService from '@/entities/telephone-portable/telephone-portable.service';
+import { ITelephonePortable } from '@/shared/model/telephone-portable.model';
+
+import TelephonePortable2Service from '@/entities/telephone-portable-2/telephone-portable-2.service';
+import { ITelephonePortable2 } from '@/shared/model/telephone-portable-2.model';
+
+import TelephoneFixeService from '@/entities/telephone-fixe/telephone-fixe.service';
+import { ITelephoneFixe } from '@/shared/model/telephone-fixe.model';
+
 import SenateurService from '@/entities/senateur/senateur.service';
 import { ISenateur } from '@/shared/model/senateur.model';
 
@@ -32,9 +41,6 @@ const validations: any = {
     profession: {},
     courriel: {},
     courriel2: {},
-    telephonePortable: {},
-    telephonePortable2: {},
-    telephoneFixe: {},
   },
 };
 
@@ -58,6 +64,18 @@ export default class EtatCivilUpdate extends Vue {
   @Inject('categorieSocioProfService') private categorieSocioProfService: () => CategorieSocioProfService;
 
   public categorieSocioProfs: ICategorieSocioProf[] = [];
+
+  @Inject('telephonePortableService') private telephonePortableService: () => TelephonePortableService;
+
+  public telephonePortables: ITelephonePortable[] = [];
+
+  @Inject('telephonePortable2Service') private telephonePortable2Service: () => TelephonePortable2Service;
+
+  public telephonePortable2s: ITelephonePortable2[] = [];
+
+  @Inject('telephoneFixeService') private telephoneFixeService: () => TelephoneFixeService;
+
+  public telephoneFixes: ITelephoneFixe[] = [];
 
   @Inject('senateurService') private senateurService: () => SenateurService;
 
@@ -157,6 +175,21 @@ export default class EtatCivilUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.categorieSocioProfs = res.data;
+      });
+    this.telephonePortableService()
+      .retrieve()
+      .then(res => {
+        this.telephonePortables = res.data;
+      });
+    this.telephonePortable2Service()
+      .retrieve()
+      .then(res => {
+        this.telephonePortable2s = res.data;
+      });
+    this.telephoneFixeService()
+      .retrieve()
+      .then(res => {
+        this.telephoneFixes = res.data;
       });
     this.senateurService()
       .retrieve()

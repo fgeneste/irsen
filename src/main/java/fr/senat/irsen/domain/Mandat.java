@@ -24,7 +24,7 @@ public class Mandat implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @JsonIgnoreProperties(value = { "etatCivil", "adresses", "mandats" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "etatCivil", "adresses", "mandats", "decorations" }, allowSetters = true)
     @OneToOne(mappedBy = "mandats")
     private Senateur senateur;
 

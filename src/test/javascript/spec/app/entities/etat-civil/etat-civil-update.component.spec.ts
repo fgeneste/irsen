@@ -15,6 +15,12 @@ import PaysNaissanceService from '@/entities/pays-naissance/pays-naissance.servi
 
 import CategorieSocioProfService from '@/entities/categorie-socio-prof/categorie-socio-prof.service';
 
+import TelephonePortableService from '@/entities/telephone-portable/telephone-portable.service';
+
+import TelephonePortable2Service from '@/entities/telephone-portable-2/telephone-portable-2.service';
+
+import TelephoneFixeService from '@/entities/telephone-fixe/telephone-fixe.service';
+
 import SenateurService from '@/entities/senateur/senateur.service';
 import AlertService from '@/shared/alert/alert.service';
 
@@ -62,6 +68,21 @@ describe('Component Tests', () => {
 
           categorieSocioProfService: () =>
             sinon.createStubInstance<CategorieSocioProfService>(CategorieSocioProfService, {
+              retrieve: sinon.stub().resolves({}),
+            } as any),
+
+          telephonePortableService: () =>
+            sinon.createStubInstance<TelephonePortableService>(TelephonePortableService, {
+              retrieve: sinon.stub().resolves({}),
+            } as any),
+
+          telephonePortable2Service: () =>
+            sinon.createStubInstance<TelephonePortable2Service>(TelephonePortable2Service, {
+              retrieve: sinon.stub().resolves({}),
+            } as any),
+
+          telephoneFixeService: () =>
+            sinon.createStubInstance<TelephoneFixeService>(TelephoneFixeService, {
               retrieve: sinon.stub().resolves({}),
             } as any),
 

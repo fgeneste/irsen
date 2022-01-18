@@ -2,11 +2,23 @@
   "name": "AdressePostale2",
   "fields": [
     {
-      "fieldName": "label",
+      "fieldName": "numero",
       "fieldType": "String"
     },
     {
-      "fieldName": "numero",
+      "fieldName": "bister",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "complement1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "complement2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeVoie",
       "fieldType": "String"
     },
     {
@@ -26,16 +38,12 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "localisation",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "modeManuel",
+      "fieldName": "affichageInternet",
       "fieldType": "Boolean"
     },
     {
-      "fieldName": "type",
-      "fieldType": "String"
+      "fieldName": "affichageIntranet",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [

@@ -56,6 +56,22 @@
       <font-awesome-icon icon="asterisk" />
       <span v-text="$t('global.menu.entities.mandatEnCours')">Mandat En Cours</span>
     </b-dropdown-item>
+    <b-dropdown-item to="/decoration">
+      <font-awesome-icon icon="asterisk" />
+      <span v-text="$t('global.menu.entities.decoration')">Decoration</span>
+    </b-dropdown-item>
+    <b-dropdown-item to="/telephone-portable">
+      <font-awesome-icon icon="asterisk" />
+      <span v-text="$t('global.menu.entities.telephonePortable')">Telephone Portable</span>
+    </b-dropdown-item>
+    <b-dropdown-item to="/telephone-portable-2">
+      <font-awesome-icon icon="asterisk" />
+      <span v-text="$t('global.menu.entities.telephonePortable2')">Telephone Portable 2</span>
+    </b-dropdown-item>
+    <b-dropdown-item to="/telephone-fixe">
+      <font-awesome-icon icon="asterisk" />
+      <span v-text="$t('global.menu.entities.telephoneFixe')">Telephone Fixe</span>
+    </b-dropdown-item>
     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
   </div>
 </template>

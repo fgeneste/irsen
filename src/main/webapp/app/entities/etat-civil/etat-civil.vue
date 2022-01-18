@@ -42,12 +42,12 @@
             <th scope="row"><span v-text="$t('irsenApp.etatCivil.profession')">Profession</span></th>
             <th scope="row"><span v-text="$t('irsenApp.etatCivil.courriel')">Courriel</span></th>
             <th scope="row"><span v-text="$t('irsenApp.etatCivil.courriel2')">Courriel 2</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.etatCivil.telephonePortable')">Telephone Portable</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.etatCivil.telephonePortable2')">Telephone Portable 2</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.etatCivil.telephoneFixe')">Telephone Fixe</span></th>
             <th scope="row"><span v-text="$t('irsenApp.etatCivil.departementNaissance')">Departement Naissance</span></th>
             <th scope="row"><span v-text="$t('irsenApp.etatCivil.paysNaissance')">Pays Naissance</span></th>
             <th scope="row"><span v-text="$t('irsenApp.etatCivil.categorieSocioProf')">Categorie Socio Prof</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.etatCivil.telephonePortable')">Telephone Portable</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.etatCivil.telephonePortable2')">Telephone Portable 2</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.etatCivil.telephoneFixe')">Telephone Fixe</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -69,9 +69,6 @@
             <td>{{ etatCivil.profession }}</td>
             <td>{{ etatCivil.courriel }}</td>
             <td>{{ etatCivil.courriel2 }}</td>
-            <td>{{ etatCivil.telephonePortable }}</td>
-            <td>{{ etatCivil.telephonePortable2 }}</td>
-            <td>{{ etatCivil.telephoneFixe }}</td>
             <td>
               <div v-if="etatCivil.departementNaissance">
                 <router-link
@@ -91,6 +88,27 @@
               <div v-if="etatCivil.categorieSocioProf">
                 <router-link :to="{ name: 'CategorieSocioProfView', params: { categorieSocioProfId: etatCivil.categorieSocioProf.id } }">{{
                   etatCivil.categorieSocioProf.id
+                }}</router-link>
+              </div>
+            </td>
+            <td>
+              <div v-if="etatCivil.telephonePortable">
+                <router-link :to="{ name: 'TelephonePortableView', params: { telephonePortableId: etatCivil.telephonePortable.id } }">{{
+                  etatCivil.telephonePortable.id
+                }}</router-link>
+              </div>
+            </td>
+            <td>
+              <div v-if="etatCivil.telephonePortable2">
+                <router-link :to="{ name: 'TelephonePortable2View', params: { telephonePortable2Id: etatCivil.telephonePortable2.id } }">{{
+                  etatCivil.telephonePortable2.id
+                }}</router-link>
+              </div>
+            </td>
+            <td>
+              <div v-if="etatCivil.telephoneFixe">
+                <router-link :to="{ name: 'TelephoneFixeView', params: { telephoneFixeId: etatCivil.telephoneFixe.id } }">{{
+                  etatCivil.telephoneFixe.id
                 }}</router-link>
               </div>
             </td>

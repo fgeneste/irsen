@@ -21,6 +21,10 @@
         "mandat": "Mandat",
         "mandatAncien": "Mandat Ancien",
         "mandatEnCours": "Mandat En Cours",
+        "decoration": "Decoration",
+        "telephonePortable": "Telephone Portable",
+        "telephonePortable2": "Telephone Portable 2",
+        "telephoneFixe": "Telephone Fixe",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

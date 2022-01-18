@@ -25,5 +25,23 @@
                                  constraintName="fk_etat_civil__categorie_socio_prof_id"
                                  referencedColumnNames="id"
                                  referencedTableName="categorie_socio_prof"/>
+
+        <addForeignKeyConstraint baseColumnNames="telephone_portable_id"
+                                 baseTableName="etat_civil"
+                                 constraintName="fk_etat_civil__telephone_portable_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="telephone_portable"/>
+
+        <addForeignKeyConstraint baseColumnNames="telephone_portable2_id"
+                                 baseTableName="etat_civil"
+                                 constraintName="fk_etat_civil__telephone_portable2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="telephone_portable_2"/>
+
+        <addForeignKeyConstraint baseColumnNames="telephone_fixe_id"
+                                 baseTableName="etat_civil"
+                                 constraintName="fk_etat_civil__telephone_fixe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="telephone_fixe"/>
     </changeSet>
 </databaseChangeLog>

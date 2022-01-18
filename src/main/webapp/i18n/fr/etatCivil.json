@@ -31,12 +31,12 @@
       "profession": "Profession",
       "courriel": "Courriel",
       "courriel2": "Courriel 2",
-      "telephonePortable": "Telephone Portable",
-      "telephonePortable2": "Telephone Portable 2",
-      "telephoneFixe": "Telephone Fixe",
       "departementNaissance": "Departement Naissance",
       "paysNaissance": "Pays Naissance",
       "categorieSocioProf": "Categorie Socio Prof",
+      "telephonePortable": "Telephone Portable",
+      "telephonePortable2": "Telephone Portable 2",
+      "telephoneFixe": "Telephone Fixe",
       "senateur": "Senateur"
     }
   }

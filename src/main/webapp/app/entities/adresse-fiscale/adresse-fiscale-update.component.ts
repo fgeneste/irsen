@@ -10,15 +10,17 @@ import AdresseFiscaleService from './adresse-fiscale.service';
 
 const validations: any = {
   adresseFiscale: {
-    label: {},
     numero: {},
+    bister: {},
+    complement1: {},
+    complement2: {},
+    typeVoie: {},
     voie: {},
     codePostal: {},
     ville: {},
     pays: {},
-    localisation: {},
-    modeManuel: {},
-    type: {},
+    affichageInternet: {},
+    affichageIntranet: {},
   },
 };
 

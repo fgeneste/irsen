@@ -31,7 +31,18 @@ public class CategorieSocioProf implements Serializable {
     @Column(name = "libelle_complet")
     private String libelleComplet;
 
-    @JsonIgnoreProperties(value = { "departementNaissance", "paysNaissance", "categorieSocioProf", "senateur" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = {
+            "departementNaissance",
+            "paysNaissance",
+            "categorieSocioProf",
+            "telephonePortable",
+            "telephonePortable2",
+            "telephoneFixe",
+            "senateur",
+        },
+        allowSetters = true
+    )
     @OneToOne(mappedBy = "categorieSocioProf")
     private EtatCivil categorieSocioProf;
 

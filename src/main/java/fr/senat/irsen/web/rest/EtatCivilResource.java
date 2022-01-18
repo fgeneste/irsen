@@ -164,15 +164,6 @@ public class EtatCivilResource {
                 if (etatCivil.getCourriel2() != null) {
                     existingEtatCivil.setCourriel2(etatCivil.getCourriel2());
                 }
-                if (etatCivil.getTelephonePortable() != null) {
-                    existingEtatCivil.setTelephonePortable(etatCivil.getTelephonePortable());
-                }
-                if (etatCivil.getTelephonePortable2() != null) {
-                    existingEtatCivil.setTelephonePortable2(etatCivil.getTelephonePortable2());
-                }
-                if (etatCivil.getTelephoneFixe() != null) {
-                    existingEtatCivil.setTelephoneFixe(etatCivil.getTelephoneFixe());
-                }
 
                 return existingEtatCivil;
             })

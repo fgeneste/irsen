@@ -20,7 +20,8 @@
       "id": "ID",
       "etatCivil": "Etat Civil",
       "adresses": "Adresses",
-      "mandats": "Mandats"
+      "mandats": "Mandats",
+      "decorations": "Decorations"
     }
   }
 }

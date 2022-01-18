@@ -125,11 +125,20 @@ public class AdresseFiscaleResource {
         Optional<AdresseFiscale> result = adresseFiscaleRepository
             .findById(adresseFiscale.getId())
             .map(existingAdresseFiscale -> {
-                if (adresseFiscale.getLabel() != null) {
-                    existingAdresseFiscale.setLabel(adresseFiscale.getLabel());
-                }
                 if (adresseFiscale.getNumero() != null) {
                     existingAdresseFiscale.setNumero(adresseFiscale.getNumero());
+                }
+                if (adresseFiscale.getBister() != null) {
+                    existingAdresseFiscale.setBister(adresseFiscale.getBister());
+                }
+                if (adresseFiscale.getComplement1() != null) {
+                    existingAdresseFiscale.setComplement1(adresseFiscale.getComplement1());
+                }
+                if (adresseFiscale.getComplement2() != null) {
+                    existingAdresseFiscale.setComplement2(adresseFiscale.getComplement2());
+                }
+                if (adresseFiscale.getTypeVoie() != null) {
+                    existingAdresseFiscale.setTypeVoie(adresseFiscale.getTypeVoie());
                 }
                 if (adresseFiscale.getVoie() != null) {
                     existingAdresseFiscale.setVoie(adresseFiscale.getVoie());
@@ -143,14 +152,11 @@ public class AdresseFiscaleResource {
                 if (adresseFiscale.getPays() != null) {
                     existingAdresseFiscale.setPays(adresseFiscale.getPays());
                 }
-                if (adresseFiscale.getLocalisation() != null) {
-                    existingAdresseFiscale.setLocalisation(adresseFiscale.getLocalisation());
+                if (adresseFiscale.getAffichageInternet() != null) {
+                    existingAdresseFiscale.setAffichageInternet(adresseFiscale.getAffichageInternet());
                 }
-                if (adresseFiscale.getModeManuel() != null) {
-                    existingAdresseFiscale.setModeManuel(adresseFiscale.getModeManuel());
-                }
-                if (adresseFiscale.getType() != null) {
-                    existingAdresseFiscale.setType(adresseFiscale.getType());
+                if (adresseFiscale.getAffichageIntranet() != null) {
+                    existingAdresseFiscale.setAffichageIntranet(adresseFiscale.getAffichageIntranet());
                 }
 
                 return existingAdresseFiscale;

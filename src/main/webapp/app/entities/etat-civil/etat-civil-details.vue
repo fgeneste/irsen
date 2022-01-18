@@ -85,24 +85,6 @@
             <span>{{ etatCivil.courriel2 }}</span>
           </dd>
           <dt>
-            <span v-text="$t('irsenApp.etatCivil.telephonePortable')">Telephone Portable</span>
-          </dt>
-          <dd>
-            <span>{{ etatCivil.telephonePortable }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('irsenApp.etatCivil.telephonePortable2')">Telephone Portable 2</span>
-          </dt>
-          <dd>
-            <span>{{ etatCivil.telephonePortable2 }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('irsenApp.etatCivil.telephoneFixe')">Telephone Fixe</span>
-          </dt>
-          <dd>
-            <span>{{ etatCivil.telephoneFixe }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('irsenApp.etatCivil.departementNaissance')">Departement Naissance</span>
           </dt>
           <dd>
@@ -130,6 +112,36 @@
             <div v-if="etatCivil.categorieSocioProf">
               <router-link :to="{ name: 'CategorieSocioProfView', params: { categorieSocioProfId: etatCivil.categorieSocioProf.id } }">{{
                 etatCivil.categorieSocioProf.id
+              }}</router-link>
+            </div>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.etatCivil.telephonePortable')">Telephone Portable</span>
+          </dt>
+          <dd>
+            <div v-if="etatCivil.telephonePortable">
+              <router-link :to="{ name: 'TelephonePortableView', params: { telephonePortableId: etatCivil.telephonePortable.id } }">{{
+                etatCivil.telephonePortable.id
+              }}</router-link>
+            </div>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.etatCivil.telephonePortable2')">Telephone Portable 2</span>
+          </dt>
+          <dd>
+            <div v-if="etatCivil.telephonePortable2">
+              <router-link :to="{ name: 'TelephonePortable2View', params: { telephonePortable2Id: etatCivil.telephonePortable2.id } }">{{
+                etatCivil.telephonePortable2.id
+              }}</router-link>
+            </div>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.etatCivil.telephoneFixe')">Telephone Fixe</span>
+          </dt>
+          <dd>
+            <div v-if="etatCivil.telephoneFixe">
+              <router-link :to="{ name: 'TelephoneFixeView', params: { telephoneFixeId: etatCivil.telephoneFixe.id } }">{{
+                etatCivil.telephoneFixe.id
               }}</router-link>
             </div>
           </dd>

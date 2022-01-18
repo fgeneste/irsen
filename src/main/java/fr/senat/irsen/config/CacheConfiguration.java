@@ -77,6 +77,11 @@ public class CacheConfiguration {
             createCache(cm, fr.senat.irsen.domain.Mandat.class.getName() + ".mandatsEnCours");
             createCache(cm, fr.senat.irsen.domain.MandatAncien.class.getName() + ".fonctions");
             createCache(cm, fr.senat.irsen.domain.MandatEnCours.class.getName() + ".fonctions");
+            createCache(cm, fr.senat.irsen.domain.Senateur.class.getName() + ".decorations");
+            createCache(cm, fr.senat.irsen.domain.Decoration.class.getName());
+            createCache(cm, fr.senat.irsen.domain.TelephonePortable.class.getName());
+            createCache(cm, fr.senat.irsen.domain.TelephonePortable2.class.getName());
+            createCache(cm, fr.senat.irsen.domain.TelephoneFixe.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

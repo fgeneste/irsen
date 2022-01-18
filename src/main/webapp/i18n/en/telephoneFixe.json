@@ -1,0 +1,26 @@
+{
+  "irsenApp": {
+    "telephoneFixe": {
+      "home": {
+        "title": "Telephone Fixes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Telephone Fixe",
+        "createOrEditLabel": "Create or edit a Telephone Fixe",
+        "notFound": "No Telephone Fixes found"
+      },
+      "created": "A new Telephone Fixe is created with identifier {{ param }}",
+      "updated": "A Telephone Fixe is updated with identifier {{ param }}",
+      "deleted": "A Telephone Fixe is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Telephone Fixe {{ id }}?"
+      },
+      "detail": {
+        "title": "Telephone Fixe"
+      },
+      "id": "ID",
+      "type": "Type",
+      "numero": "Numero",
+      "etatCivil": "Etat Civil"
+    }
+  }
+}

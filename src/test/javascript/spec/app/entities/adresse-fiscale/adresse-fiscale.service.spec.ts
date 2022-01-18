@@ -29,7 +29,20 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new AdresseFiscaleService();
-      elemDefault = new AdresseFiscale(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, 'AAAAAAA');
+      elemDefault = new AdresseFiscale(
+        123,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        false,
+        false
+      );
     });
 
     describe('Service methods', () => {
@@ -81,15 +94,17 @@ describe('Service Tests', () => {
       it('should update a AdresseFiscale', async () => {
         const returnedFromService = Object.assign(
           {
-            label: 'BBBBBB',
             numero: 'BBBBBB',
+            bister: 'BBBBBB',
+            complement1: 'BBBBBB',
+            complement2: 'BBBBBB',
+            typeVoie: 'BBBBBB',
             voie: 'BBBBBB',
             codePostal: 'BBBBBB',
             ville: 'BBBBBB',
             pays: 'BBBBBB',
-            localisation: 'BBBBBB',
-            modeManuel: true,
-            type: 'BBBBBB',
+            affichageInternet: true,
+            affichageIntranet: true,
           },
           elemDefault
         );
@@ -116,11 +131,12 @@ describe('Service Tests', () => {
       it('should partial update a AdresseFiscale', async () => {
         const patchObject = Object.assign(
           {
-            label: 'BBBBBB',
-            codePostal: 'BBBBBB',
+            numero: 'BBBBBB',
+            complement2: 'BBBBBB',
+            typeVoie: 'BBBBBB',
+            voie: 'BBBBBB',
             ville: 'BBBBBB',
-            pays: 'BBBBBB',
-            modeManuel: true,
+            affichageIntranet: true,
           },
           new AdresseFiscale()
         );
@@ -148,15 +164,17 @@ describe('Service Tests', () => {
       it('should return a list of AdresseFiscale', async () => {
         const returnedFromService = Object.assign(
           {
-            label: 'BBBBBB',
             numero: 'BBBBBB',
+            bister: 'BBBBBB',
+            complement1: 'BBBBBB',
+            complement2: 'BBBBBB',
+            typeVoie: 'BBBBBB',
             voie: 'BBBBBB',
             codePostal: 'BBBBBB',
             ville: 'BBBBBB',
             pays: 'BBBBBB',
-            localisation: 'BBBBBB',
-            modeManuel: true,
-            type: 'BBBBBB',
+            affichageInternet: true,
+            affichageIntranet: true,
           },
           elemDefault
         );

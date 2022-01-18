@@ -46,7 +46,18 @@ public class DepartementNaissance implements Serializable {
     @Column(name = "libelle_avec_article")
     private String libelleAvecArticle;
 
-    @JsonIgnoreProperties(value = { "departementNaissance", "paysNaissance", "categorieSocioProf", "senateur" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = {
+            "departementNaissance",
+            "paysNaissance",
+            "categorieSocioProf",
+            "telephonePortable",
+            "telephonePortable2",
+            "telephoneFixe",
+            "senateur",
+        },
+        allowSetters = true
+    )
     @OneToOne(mappedBy = "departementNaissance")
     private EtatCivil etatCivil;
 

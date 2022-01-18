@@ -52,18 +52,6 @@
     {
       "fieldName": "courriel2",
       "fieldType": "String"
-    },
-    {
-      "fieldName": "telephonePortable",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "telephonePortable2",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "telephoneFixe",
-      "fieldType": "String"
     }
   ],
   "relationships": [
@@ -86,6 +74,27 @@
       "otherEntityName": "categorieSocioProf",
       "otherEntityRelationshipName": "categorieSocioProf",
       "relationshipName": "categorieSocioProf",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "telephonePortable",
+      "otherEntityRelationshipName": "etatCivil",
+      "relationshipName": "telephonePortable",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "telephonePortable2",
+      "otherEntityRelationshipName": "etatCivil",
+      "relationshipName": "telephonePortable2",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "telephoneFixe",
+      "otherEntityRelationshipName": "etatCivil",
+      "relationshipName": "telephoneFixe",
       "ownerSide": true
     },
     {

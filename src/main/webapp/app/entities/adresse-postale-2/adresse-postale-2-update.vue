@@ -15,18 +15,6 @@
             <input type="text" class="form-control" id="id" name="id" v-model="adressePostale2.id" readonly />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.adressePostale2.label')" for="adresse-postale-2-label">Label</label>
-            <input
-              type="text"
-              class="form-control"
-              name="label"
-              id="adresse-postale-2-label"
-              data-cy="label"
-              :class="{ valid: !$v.adressePostale2.label.$invalid, invalid: $v.adressePostale2.label.$invalid }"
-              v-model="$v.adressePostale2.label.$model"
-            />
-          </div>
-          <div class="form-group">
             <label class="form-control-label" v-text="$t('irsenApp.adressePostale2.numero')" for="adresse-postale-2-numero">Numero</label>
             <input
               type="text"
@@ -36,6 +24,60 @@
               data-cy="numero"
               :class="{ valid: !$v.adressePostale2.numero.$invalid, invalid: $v.adressePostale2.numero.$invalid }"
               v-model="$v.adressePostale2.numero.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.adressePostale2.bister')" for="adresse-postale-2-bister">Bister</label>
+            <input
+              type="text"
+              class="form-control"
+              name="bister"
+              id="adresse-postale-2-bister"
+              data-cy="bister"
+              :class="{ valid: !$v.adressePostale2.bister.$invalid, invalid: $v.adressePostale2.bister.$invalid }"
+              v-model="$v.adressePostale2.bister.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.adressePostale2.complement1')" for="adresse-postale-2-complement1"
+              >Complement 1</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="complement1"
+              id="adresse-postale-2-complement1"
+              data-cy="complement1"
+              :class="{ valid: !$v.adressePostale2.complement1.$invalid, invalid: $v.adressePostale2.complement1.$invalid }"
+              v-model="$v.adressePostale2.complement1.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.adressePostale2.complement2')" for="adresse-postale-2-complement2"
+              >Complement 2</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="complement2"
+              id="adresse-postale-2-complement2"
+              data-cy="complement2"
+              :class="{ valid: !$v.adressePostale2.complement2.$invalid, invalid: $v.adressePostale2.complement2.$invalid }"
+              v-model="$v.adressePostale2.complement2.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.adressePostale2.typeVoie')" for="adresse-postale-2-typeVoie"
+              >Type Voie</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="typeVoie"
+              id="adresse-postale-2-typeVoie"
+              data-cy="typeVoie"
+              :class="{ valid: !$v.adressePostale2.typeVoie.$invalid, invalid: $v.adressePostale2.typeVoie.$invalid }"
+              v-model="$v.adressePostale2.typeVoie.$model"
             />
           </div>
           <div class="form-group">
@@ -89,43 +131,37 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.adressePostale2.localisation')" for="adresse-postale-2-localisation"
-              >Localisation</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              name="localisation"
-              id="adresse-postale-2-localisation"
-              data-cy="localisation"
-              :class="{ valid: !$v.adressePostale2.localisation.$invalid, invalid: $v.adressePostale2.localisation.$invalid }"
-              v-model="$v.adressePostale2.localisation.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.adressePostale2.modeManuel')" for="adresse-postale-2-modeManuel"
-              >Mode Manuel</label
+            <label
+              class="form-control-label"
+              v-text="$t('irsenApp.adressePostale2.affichageInternet')"
+              for="adresse-postale-2-affichageInternet"
+              >Affichage Internet</label
             >
             <input
               type="checkbox"
               class="form-check"
-              name="modeManuel"
-              id="adresse-postale-2-modeManuel"
-              data-cy="modeManuel"
-              :class="{ valid: !$v.adressePostale2.modeManuel.$invalid, invalid: $v.adressePostale2.modeManuel.$invalid }"
-              v-model="$v.adressePostale2.modeManuel.$model"
+              name="affichageInternet"
+              id="adresse-postale-2-affichageInternet"
+              data-cy="affichageInternet"
+              :class="{ valid: !$v.adressePostale2.affichageInternet.$invalid, invalid: $v.adressePostale2.affichageInternet.$invalid }"
+              v-model="$v.adressePostale2.affichageInternet.$model"
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.adressePostale2.type')" for="adresse-postale-2-type">Type</label>
+            <label
+              class="form-control-label"
+              v-text="$t('irsenApp.adressePostale2.affichageIntranet')"
+              for="adresse-postale-2-affichageIntranet"
+              >Affichage Intranet</label
+            >
             <input
-              type="text"
-              class="form-control"
-              name="type"
-              id="adresse-postale-2-type"
-              data-cy="type"
-              :class="{ valid: !$v.adressePostale2.type.$invalid, invalid: $v.adressePostale2.type.$invalid }"
-              v-model="$v.adressePostale2.type.$model"
+              type="checkbox"
+              class="form-check"
+              name="affichageIntranet"
+              id="adresse-postale-2-affichageIntranet"
+              data-cy="affichageIntranet"
+              :class="{ valid: !$v.adressePostale2.affichageIntranet.$invalid, invalid: $v.adressePostale2.affichageIntranet.$invalid }"
+              v-model="$v.adressePostale2.affichageIntranet.$model"
             />
           </div>
         </div>

@@ -15,6 +15,10 @@ import FonctionEnCoursService from './fonction-en-cours/fonction-en-cours.servic
 import MandatService from './mandat/mandat.service';
 import MandatAncienService from './mandat-ancien/mandat-ancien.service';
 import MandatEnCoursService from './mandat-en-cours/mandat-en-cours.service';
+import DecorationService from './decoration/decoration.service';
+import TelephonePortableService from './telephone-portable/telephone-portable.service';
+import TelephonePortable2Service from './telephone-portable-2/telephone-portable-2.service';
+import TelephoneFixeService from './telephone-fixe/telephone-fixe.service';
 // jhipster-needle-add-entity-service-to-entities-component-import - JHipster will import entities services here
 
 @Component
@@ -34,5 +38,9 @@ export default class Entities extends Vue {
   @Provide('mandatService') private mandatService = () => new MandatService();
   @Provide('mandatAncienService') private mandatAncienService = () => new MandatAncienService();
   @Provide('mandatEnCoursService') private mandatEnCoursService = () => new MandatEnCoursService();
+  @Provide('decorationService') private decorationService = () => new DecorationService();
+  @Provide('telephonePortableService') private telephonePortableService = () => new TelephonePortableService();
+  @Provide('telephonePortable2Service') private telephonePortable2Service = () => new TelephonePortable2Service();
+  @Provide('telephoneFixeService') private telephoneFixeService = () => new TelephoneFixeService();
   // jhipster-needle-add-entity-service-to-entities-component - JHipster will import entities services here
 }

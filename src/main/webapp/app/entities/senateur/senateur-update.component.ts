@@ -11,6 +11,9 @@ import { IAdresses } from '@/shared/model/adresses.model';
 import MandatService from '@/entities/mandat/mandat.service';
 import { IMandat } from '@/shared/model/mandat.model';
 
+import DecorationService from '@/entities/decoration/decoration.service';
+import { IDecoration } from '@/shared/model/decoration.model';
+
 import { ISenateur, Senateur } from '@/shared/model/senateur.model';
 import SenateurService from './senateur.service';
 
@@ -38,6 +41,10 @@ export default class SenateurUpdate extends Vue {
   @Inject('mandatService') private mandatService: () => MandatService;
 
   public mandats: IMandat[] = [];
+
+  @Inject('decorationService') private decorationService: () => DecorationService;
+
+  public decorations: IDecoration[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -133,6 +140,11 @@ export default class SenateurUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.mandats = res.data;
+      });
+    this.decorationService()
+      .retrieve()
+      .then(res => {
+        this.decorations = res.data;
       });
   }
 }

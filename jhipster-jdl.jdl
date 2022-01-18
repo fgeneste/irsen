@@ -39,9 +39,24 @@ entity EtatCivil{
 	profession String,
 	courriel String,
 	courriel2 String,
-	telephonePortable String,
-	telephonePortable2 String,
-	telephoneFixe String,
+//	telephonePortable Telephone,
+//	telephonePortable2 Telephone,
+//	telephoneFixe Telephone,
+}
+
+entity TelephonePortable {
+    type String,
+    numero String
+}
+
+entity TelephonePortable2 {
+    type String,
+    numero String
+}
+
+entity TelephoneFixe {
+    type String,
+    numero String
 }
 
 entity AdresseFiscale{
@@ -144,6 +159,10 @@ relationship OneToOne {
     Adresses{adresseFiscale} to AdresseFiscale{adresses},
     Adresses{adressePostale} to AdressePostale{adresses},
     Adresses{adressePostale2} to AdressePostale2{adresses},
+    Adresses{adresseFiscale} to AdresseFiscale{adresses},
+    EtatCivil{telephonePortable} to TelephonePortable{etatCivil},
+    EtatCivil{telephonePortable2} to TelephonePortable2{etatCivil},
+    EtatCivil{telephoneFixe} to TelephoneFixe{etatCivil},
 }
 
 relationship ManyToOne {

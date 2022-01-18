@@ -125,11 +125,20 @@ public class AdressePostaleResource {
         Optional<AdressePostale> result = adressePostaleRepository
             .findById(adressePostale.getId())
             .map(existingAdressePostale -> {
-                if (adressePostale.getLabel() != null) {
-                    existingAdressePostale.setLabel(adressePostale.getLabel());
-                }
                 if (adressePostale.getNumero() != null) {
                     existingAdressePostale.setNumero(adressePostale.getNumero());
+                }
+                if (adressePostale.getBister() != null) {
+                    existingAdressePostale.setBister(adressePostale.getBister());
+                }
+                if (adressePostale.getComplement1() != null) {
+                    existingAdressePostale.setComplement1(adressePostale.getComplement1());
+                }
+                if (adressePostale.getComplement2() != null) {
+                    existingAdressePostale.setComplement2(adressePostale.getComplement2());
+                }
+                if (adressePostale.getTypeVoie() != null) {
+                    existingAdressePostale.setTypeVoie(adressePostale.getTypeVoie());
                 }
                 if (adressePostale.getVoie() != null) {
                     existingAdressePostale.setVoie(adressePostale.getVoie());
@@ -143,14 +152,11 @@ public class AdressePostaleResource {
                 if (adressePostale.getPays() != null) {
                     existingAdressePostale.setPays(adressePostale.getPays());
                 }
-                if (adressePostale.getLocalisation() != null) {
-                    existingAdressePostale.setLocalisation(adressePostale.getLocalisation());
+                if (adressePostale.getAffichageInternet() != null) {
+                    existingAdressePostale.setAffichageInternet(adressePostale.getAffichageInternet());
                 }
-                if (adressePostale.getModeManuel() != null) {
-                    existingAdressePostale.setModeManuel(adressePostale.getModeManuel());
-                }
-                if (adressePostale.getType() != null) {
-                    existingAdressePostale.setType(adressePostale.getType());
+                if (adressePostale.getAffichageIntranet() != null) {
+                    existingAdressePostale.setAffichageIntranet(adressePostale.getAffichageIntranet());
                 }
 
                 return existingAdressePostale;

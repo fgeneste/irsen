@@ -29,11 +29,20 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class AdressePostaleResourceIT {
 
-    private static final String DEFAULT_LABEL = "AAAAAAAAAA";
-    private static final String UPDATED_LABEL = "BBBBBBBBBB";
-
     private static final String DEFAULT_NUMERO = "AAAAAAAAAA";
     private static final String UPDATED_NUMERO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_BISTER = "AAAAAAAAAA";
+    private static final String UPDATED_BISTER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_COMPLEMENT_1 = "AAAAAAAAAA";
+    private static final String UPDATED_COMPLEMENT_1 = "BBBBBBBBBB";
+
+    private static final String DEFAULT_COMPLEMENT_2 = "AAAAAAAAAA";
+    private static final String UPDATED_COMPLEMENT_2 = "BBBBBBBBBB";
+
+    private static final String DEFAULT_TYPE_VOIE = "AAAAAAAAAA";
+    private static final String UPDATED_TYPE_VOIE = "BBBBBBBBBB";
 
     private static final String DEFAULT_VOIE = "AAAAAAAAAA";
     private static final String UPDATED_VOIE = "BBBBBBBBBB";
@@ -47,14 +56,11 @@ class AdressePostaleResourceIT {
     private static final String DEFAULT_PAYS = "AAAAAAAAAA";
     private static final String UPDATED_PAYS = "BBBBBBBBBB";
 
-    private static final String DEFAULT_LOCALISATION = "AAAAAAAAAA";
-    private static final String UPDATED_LOCALISATION = "BBBBBBBBBB";
+    private static final Boolean DEFAULT_AFFICHAGE_INTERNET = false;
+    private static final Boolean UPDATED_AFFICHAGE_INTERNET = true;
 
-    private static final Boolean DEFAULT_MODE_MANUEL = false;
-    private static final Boolean UPDATED_MODE_MANUEL = true;
-
-    private static final String DEFAULT_TYPE = "AAAAAAAAAA";
-    private static final String UPDATED_TYPE = "BBBBBBBBBB";
+    private static final Boolean DEFAULT_AFFICHAGE_INTRANET = false;
+    private static final Boolean UPDATED_AFFICHAGE_INTRANET = true;
 
     private static final String ENTITY_API_URL = "/api/adresse-postales";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -81,15 +87,17 @@ class AdressePostaleResourceIT {
      */
     public static AdressePostale createEntity(EntityManager em) {
         AdressePostale adressePostale = new AdressePostale()
-            .label(DEFAULT_LABEL)
             .numero(DEFAULT_NUMERO)
+            .bister(DEFAULT_BISTER)
+            .complement1(DEFAULT_COMPLEMENT_1)
+            .complement2(DEFAULT_COMPLEMENT_2)
+            .typeVoie(DEFAULT_TYPE_VOIE)
             .voie(DEFAULT_VOIE)
             .codePostal(DEFAULT_CODE_POSTAL)
             .ville(DEFAULT_VILLE)
             .pays(DEFAULT_PAYS)
-            .localisation(DEFAULT_LOCALISATION)
-            .modeManuel(DEFAULT_MODE_MANUEL)
-            .type(DEFAULT_TYPE);
+            .affichageInternet(DEFAULT_AFFICHAGE_INTERNET)
+            .affichageIntranet(DEFAULT_AFFICHAGE_INTRANET);
         return adressePostale;
     }
 
@@ -101,15 +109,17 @@ class AdressePostaleResourceIT {
      */
     public static AdressePostale createUpdatedEntity(EntityManager em) {
         AdressePostale adressePostale = new AdressePostale()
-            .label(UPDATED_LABEL)
             .numero(UPDATED_NUMERO)
+            .bister(UPDATED_BISTER)
+            .complement1(UPDATED_COMPLEMENT_1)
+            .complement2(UPDATED_COMPLEMENT_2)
+            .typeVoie(UPDATED_TYPE_VOIE)
             .voie(UPDATED_VOIE)
             .codePostal(UPDATED_CODE_POSTAL)
             .ville(UPDATED_VILLE)
             .pays(UPDATED_PAYS)
-            .localisation(UPDATED_LOCALISATION)
-            .modeManuel(UPDATED_MODE_MANUEL)
-            .type(UPDATED_TYPE);
+            .affichageInternet(UPDATED_AFFICHAGE_INTERNET)
+            .affichageIntranet(UPDATED_AFFICHAGE_INTRANET);
         return adressePostale;
     }
 
@@ -133,15 +143,17 @@ class AdressePostaleResourceIT {
         List<AdressePostale> adressePostaleList = adressePostaleRepository.findAll();
         assertThat(adressePostaleList).hasSize(databaseSizeBeforeCreate + 1);
         AdressePostale testAdressePostale = adressePostaleList.get(adressePostaleList.size() - 1);
-        assertThat(testAdressePostale.getLabel()).isEqualTo(DEFAULT_LABEL);
         assertThat(testAdressePostale.getNumero()).isEqualTo(DEFAULT_NUMERO);
+        assertThat(testAdressePostale.getBister()).isEqualTo(DEFAULT_BISTER);
+        assertThat(testAdressePostale.getComplement1()).isEqualTo(DEFAULT_COMPLEMENT_1);
+        assertThat(testAdressePostale.getComplement2()).isEqualTo(DEFAULT_COMPLEMENT_2);
+        assertThat(testAdressePostale.getTypeVoie()).isEqualTo(DEFAULT_TYPE_VOIE);
         assertThat(testAdressePostale.getVoie()).isEqualTo(DEFAULT_VOIE);
         assertThat(testAdressePostale.getCodePostal()).isEqualTo(DEFAULT_CODE_POSTAL);
         assertThat(testAdressePostale.getVille()).isEqualTo(DEFAULT_VILLE);
         assertThat(testAdressePostale.getPays()).isEqualTo(DEFAULT_PAYS);
-        assertThat(testAdressePostale.getLocalisation()).isEqualTo(DEFAULT_LOCALISATION);
-        assertThat(testAdressePostale.getModeManuel()).isEqualTo(DEFAULT_MODE_MANUEL);
-        assertThat(testAdressePostale.getType()).isEqualTo(DEFAULT_TYPE);
+        assertThat(testAdressePostale.getAffichageInternet()).isEqualTo(DEFAULT_AFFICHAGE_INTERNET);
+        assertThat(testAdressePostale.getAffichageIntranet()).isEqualTo(DEFAULT_AFFICHAGE_INTRANET);
     }
 
     @Test
@@ -176,15 +188,17 @@ class AdressePostaleResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(adressePostale.getId().intValue())))
-            .andExpect(jsonPath("$.[*].label").value(hasItem(DEFAULT_LABEL)))
             .andExpect(jsonPath("$.[*].numero").value(hasItem(DEFAULT_NUMERO)))
+            .andExpect(jsonPath("$.[*].bister").value(hasItem(DEFAULT_BISTER)))
+            .andExpect(jsonPath("$.[*].complement1").value(hasItem(DEFAULT_COMPLEMENT_1)))
+            .andExpect(jsonPath("$.[*].complement2").value(hasItem(DEFAULT_COMPLEMENT_2)))
+            .andExpect(jsonPath("$.[*].typeVoie").value(hasItem(DEFAULT_TYPE_VOIE)))
             .andExpect(jsonPath("$.[*].voie").value(hasItem(DEFAULT_VOIE)))
             .andExpect(jsonPath("$.[*].codePostal").value(hasItem(DEFAULT_CODE_POSTAL)))
             .andExpect(jsonPath("$.[*].ville").value(hasItem(DEFAULT_VILLE)))
             .andExpect(jsonPath("$.[*].pays").value(hasItem(DEFAULT_PAYS)))
-            .andExpect(jsonPath("$.[*].localisation").value(hasItem(DEFAULT_LOCALISATION)))
-            .andExpect(jsonPath("$.[*].modeManuel").value(hasItem(DEFAULT_MODE_MANUEL.booleanValue())))
-            .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE)));
+            .andExpect(jsonPath("$.[*].affichageInternet").value(hasItem(DEFAULT_AFFICHAGE_INTERNET.booleanValue())))
+            .andExpect(jsonPath("$.[*].affichageIntranet").value(hasItem(DEFAULT_AFFICHAGE_INTRANET.booleanValue())));
     }
 
     @Test
@@ -199,15 +213,17 @@ class AdressePostaleResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(adressePostale.getId().intValue()))
-            .andExpect(jsonPath("$.label").value(DEFAULT_LABEL))
             .andExpect(jsonPath("$.numero").value(DEFAULT_NUMERO))
+            .andExpect(jsonPath("$.bister").value(DEFAULT_BISTER))
+            .andExpect(jsonPath("$.complement1").value(DEFAULT_COMPLEMENT_1))
+            .andExpect(jsonPath("$.complement2").value(DEFAULT_COMPLEMENT_2))
+            .andExpect(jsonPath("$.typeVoie").value(DEFAULT_TYPE_VOIE))
             .andExpect(jsonPath("$.voie").value(DEFAULT_VOIE))
             .andExpect(jsonPath("$.codePostal").value(DEFAULT_CODE_POSTAL))
             .andExpect(jsonPath("$.ville").value(DEFAULT_VILLE))
             .andExpect(jsonPath("$.pays").value(DEFAULT_PAYS))
-            .andExpect(jsonPath("$.localisation").value(DEFAULT_LOCALISATION))
-            .andExpect(jsonPath("$.modeManuel").value(DEFAULT_MODE_MANUEL.booleanValue()))
-            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE));
+            .andExpect(jsonPath("$.affichageInternet").value(DEFAULT_AFFICHAGE_INTERNET.booleanValue()))
+            .andExpect(jsonPath("$.affichageIntranet").value(DEFAULT_AFFICHAGE_INTRANET.booleanValue()));
     }
 
     @Test
@@ -230,15 +246,17 @@ class AdressePostaleResourceIT {
         // Disconnect from session so that the updates on updatedAdressePostale are not directly saved in db
         em.detach(updatedAdressePostale);
         updatedAdressePostale
-            .label(UPDATED_LABEL)
             .numero(UPDATED_NUMERO)
+            .bister(UPDATED_BISTER)
+            .complement1(UPDATED_COMPLEMENT_1)
+            .complement2(UPDATED_COMPLEMENT_2)
+            .typeVoie(UPDATED_TYPE_VOIE)
             .voie(UPDATED_VOIE)
             .codePostal(UPDATED_CODE_POSTAL)
             .ville(UPDATED_VILLE)
             .pays(UPDATED_PAYS)
-            .localisation(UPDATED_LOCALISATION)
-            .modeManuel(UPDATED_MODE_MANUEL)
-            .type(UPDATED_TYPE);
+            .affichageInternet(UPDATED_AFFICHAGE_INTERNET)
+            .affichageIntranet(UPDATED_AFFICHAGE_INTRANET);
 
         restAdressePostaleMockMvc
             .perform(
@@ -252,15 +270,17 @@ class AdressePostaleResourceIT {
         List<AdressePostale> adressePostaleList = adressePostaleRepository.findAll();
         assertThat(adressePostaleList).hasSize(databaseSizeBeforeUpdate);
         AdressePostale testAdressePostale = adressePostaleList.get(adressePostaleList.size() - 1);
-        assertThat(testAdressePostale.getLabel()).isEqualTo(UPDATED_LABEL);
         assertThat(testAdressePostale.getNumero()).isEqualTo(UPDATED_NUMERO);
+        assertThat(testAdressePostale.getBister()).isEqualTo(UPDATED_BISTER);
+        assertThat(testAdressePostale.getComplement1()).isEqualTo(UPDATED_COMPLEMENT_1);
+        assertThat(testAdressePostale.getComplement2()).isEqualTo(UPDATED_COMPLEMENT_2);
+        assertThat(testAdressePostale.getTypeVoie()).isEqualTo(UPDATED_TYPE_VOIE);
         assertThat(testAdressePostale.getVoie()).isEqualTo(UPDATED_VOIE);
         assertThat(testAdressePostale.getCodePostal()).isEqualTo(UPDATED_CODE_POSTAL);
         assertThat(testAdressePostale.getVille()).isEqualTo(UPDATED_VILLE);
         assertThat(testAdressePostale.getPays()).isEqualTo(UPDATED_PAYS);
-        assertThat(testAdressePostale.getLocalisation()).isEqualTo(UPDATED_LOCALISATION);
-        assertThat(testAdressePostale.getModeManuel()).isEqualTo(UPDATED_MODE_MANUEL);
-        assertThat(testAdressePostale.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testAdressePostale.getAffichageInternet()).isEqualTo(UPDATED_AFFICHAGE_INTERNET);
+        assertThat(testAdressePostale.getAffichageIntranet()).isEqualTo(UPDATED_AFFICHAGE_INTRANET);
     }
 
     @Test
@@ -331,7 +351,11 @@ class AdressePostaleResourceIT {
         AdressePostale partialUpdatedAdressePostale = new AdressePostale();
         partialUpdatedAdressePostale.setId(adressePostale.getId());
 
-        partialUpdatedAdressePostale.voie(UPDATED_VOIE).codePostal(UPDATED_CODE_POSTAL).ville(UPDATED_VILLE);
+        partialUpdatedAdressePostale
+            .complement1(UPDATED_COMPLEMENT_1)
+            .complement2(UPDATED_COMPLEMENT_2)
+            .typeVoie(UPDATED_TYPE_VOIE)
+            .affichageInternet(UPDATED_AFFICHAGE_INTERNET);
 
         restAdressePostaleMockMvc
             .perform(
@@ -345,15 +369,17 @@ class AdressePostaleResourceIT {
         List<AdressePostale> adressePostaleList = adressePostaleRepository.findAll();
         assertThat(adressePostaleList).hasSize(databaseSizeBeforeUpdate);
         AdressePostale testAdressePostale = adressePostaleList.get(adressePostaleList.size() - 1);
-        assertThat(testAdressePostale.getLabel()).isEqualTo(DEFAULT_LABEL);
         assertThat(testAdressePostale.getNumero()).isEqualTo(DEFAULT_NUMERO);
-        assertThat(testAdressePostale.getVoie()).isEqualTo(UPDATED_VOIE);
-        assertThat(testAdressePostale.getCodePostal()).isEqualTo(UPDATED_CODE_POSTAL);
-        assertThat(testAdressePostale.getVille()).isEqualTo(UPDATED_VILLE);
+        assertThat(testAdressePostale.getBister()).isEqualTo(DEFAULT_BISTER);
+        assertThat(testAdressePostale.getComplement1()).isEqualTo(UPDATED_COMPLEMENT_1);
+        assertThat(testAdressePostale.getComplement2()).isEqualTo(UPDATED_COMPLEMENT_2);
+        assertThat(testAdressePostale.getTypeVoie()).isEqualTo(UPDATED_TYPE_VOIE);
+        assertThat(testAdressePostale.getVoie()).isEqualTo(DEFAULT_VOIE);
+        assertThat(testAdressePostale.getCodePostal()).isEqualTo(DEFAULT_CODE_POSTAL);
+        assertThat(testAdressePostale.getVille()).isEqualTo(DEFAULT_VILLE);
         assertThat(testAdressePostale.getPays()).isEqualTo(DEFAULT_PAYS);
-        assertThat(testAdressePostale.getLocalisation()).isEqualTo(DEFAULT_LOCALISATION);
-        assertThat(testAdressePostale.getModeManuel()).isEqualTo(DEFAULT_MODE_MANUEL);
-        assertThat(testAdressePostale.getType()).isEqualTo(DEFAULT_TYPE);
+        assertThat(testAdressePostale.getAffichageInternet()).isEqualTo(UPDATED_AFFICHAGE_INTERNET);
+        assertThat(testAdressePostale.getAffichageIntranet()).isEqualTo(DEFAULT_AFFICHAGE_INTRANET);
     }
 
     @Test
@@ -369,15 +395,17 @@ class AdressePostaleResourceIT {
         partialUpdatedAdressePostale.setId(adressePostale.getId());
 
         partialUpdatedAdressePostale
-            .label(UPDATED_LABEL)
             .numero(UPDATED_NUMERO)
+            .bister(UPDATED_BISTER)
+            .complement1(UPDATED_COMPLEMENT_1)
+            .complement2(UPDATED_COMPLEMENT_2)
+            .typeVoie(UPDATED_TYPE_VOIE)
             .voie(UPDATED_VOIE)
             .codePostal(UPDATED_CODE_POSTAL)
             .ville(UPDATED_VILLE)
             .pays(UPDATED_PAYS)
-            .localisation(UPDATED_LOCALISATION)
-            .modeManuel(UPDATED_MODE_MANUEL)
-            .type(UPDATED_TYPE);
+            .affichageInternet(UPDATED_AFFICHAGE_INTERNET)
+            .affichageIntranet(UPDATED_AFFICHAGE_INTRANET);
 
         restAdressePostaleMockMvc
             .perform(
@@ -391,15 +419,17 @@ class AdressePostaleResourceIT {
         List<AdressePostale> adressePostaleList = adressePostaleRepository.findAll();
         assertThat(adressePostaleList).hasSize(databaseSizeBeforeUpdate);
         AdressePostale testAdressePostale = adressePostaleList.get(adressePostaleList.size() - 1);
-        assertThat(testAdressePostale.getLabel()).isEqualTo(UPDATED_LABEL);
         assertThat(testAdressePostale.getNumero()).isEqualTo(UPDATED_NUMERO);
+        assertThat(testAdressePostale.getBister()).isEqualTo(UPDATED_BISTER);
+        assertThat(testAdressePostale.getComplement1()).isEqualTo(UPDATED_COMPLEMENT_1);
+        assertThat(testAdressePostale.getComplement2()).isEqualTo(UPDATED_COMPLEMENT_2);
+        assertThat(testAdressePostale.getTypeVoie()).isEqualTo(UPDATED_TYPE_VOIE);
         assertThat(testAdressePostale.getVoie()).isEqualTo(UPDATED_VOIE);
         assertThat(testAdressePostale.getCodePostal()).isEqualTo(UPDATED_CODE_POSTAL);
         assertThat(testAdressePostale.getVille()).isEqualTo(UPDATED_VILLE);
         assertThat(testAdressePostale.getPays()).isEqualTo(UPDATED_PAYS);
-        assertThat(testAdressePostale.getLocalisation()).isEqualTo(UPDATED_LOCALISATION);
-        assertThat(testAdressePostale.getModeManuel()).isEqualTo(UPDATED_MODE_MANUEL);
-        assertThat(testAdressePostale.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testAdressePostale.getAffichageInternet()).isEqualTo(UPDATED_AFFICHAGE_INTERNET);
+        assertThat(testAdressePostale.getAffichageIntranet()).isEqualTo(UPDATED_AFFICHAGE_INTRANET);
     }
 
     @Test

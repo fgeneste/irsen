@@ -1,0 +1,26 @@
+{
+  "irsenApp": {
+    "decoration": {
+      "home": {
+        "title": "Decorations",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Decoration",
+        "createOrEditLabel": "Créer ou éditer un Decoration",
+        "notFound": "Aucun Decoration trouvé"
+      },
+      "created": "Un nouveau Decoration a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Decoration avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Decoration avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Decoration {{ id }} ?"
+      },
+      "detail": {
+        "title": "Decoration"
+      },
+      "id": "ID",
+      "type": "Type",
+      "grade": "Grade",
+      "senateur": "Senateur"
+    }
+  }
+}

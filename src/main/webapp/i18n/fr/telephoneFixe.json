@@ -1,0 +1,26 @@
+{
+  "irsenApp": {
+    "telephoneFixe": {
+      "home": {
+        "title": "TelephoneFixes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Telephone Fixe",
+        "createOrEditLabel": "Créer ou éditer un Telephone Fixe",
+        "notFound": "Aucun Telephone Fixe trouvé"
+      },
+      "created": "Un nouveau Telephone Fixe a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Telephone Fixe avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Telephone Fixe avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Telephone Fixe {{ id }} ?"
+      },
+      "detail": {
+        "title": "Telephone Fixe"
+      },
+      "id": "ID",
+      "type": "Type",
+      "numero": "Numero",
+      "etatCivil": "Etat Civil"
+    }
+  }
+}

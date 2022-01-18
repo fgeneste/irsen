@@ -15,18 +15,6 @@
             <input type="text" class="form-control" id="id" name="id" v-model="adresseFiscale.id" readonly />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.adresseFiscale.label')" for="adresse-fiscale-label">Label</label>
-            <input
-              type="text"
-              class="form-control"
-              name="label"
-              id="adresse-fiscale-label"
-              data-cy="label"
-              :class="{ valid: !$v.adresseFiscale.label.$invalid, invalid: $v.adresseFiscale.label.$invalid }"
-              v-model="$v.adresseFiscale.label.$model"
-            />
-          </div>
-          <div class="form-group">
             <label class="form-control-label" v-text="$t('irsenApp.adresseFiscale.numero')" for="adresse-fiscale-numero">Numero</label>
             <input
               type="text"
@@ -36,6 +24,60 @@
               data-cy="numero"
               :class="{ valid: !$v.adresseFiscale.numero.$invalid, invalid: $v.adresseFiscale.numero.$invalid }"
               v-model="$v.adresseFiscale.numero.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.adresseFiscale.bister')" for="adresse-fiscale-bister">Bister</label>
+            <input
+              type="text"
+              class="form-control"
+              name="bister"
+              id="adresse-fiscale-bister"
+              data-cy="bister"
+              :class="{ valid: !$v.adresseFiscale.bister.$invalid, invalid: $v.adresseFiscale.bister.$invalid }"
+              v-model="$v.adresseFiscale.bister.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.adresseFiscale.complement1')" for="adresse-fiscale-complement1"
+              >Complement 1</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="complement1"
+              id="adresse-fiscale-complement1"
+              data-cy="complement1"
+              :class="{ valid: !$v.adresseFiscale.complement1.$invalid, invalid: $v.adresseFiscale.complement1.$invalid }"
+              v-model="$v.adresseFiscale.complement1.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.adresseFiscale.complement2')" for="adresse-fiscale-complement2"
+              >Complement 2</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="complement2"
+              id="adresse-fiscale-complement2"
+              data-cy="complement2"
+              :class="{ valid: !$v.adresseFiscale.complement2.$invalid, invalid: $v.adresseFiscale.complement2.$invalid }"
+              v-model="$v.adresseFiscale.complement2.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('irsenApp.adresseFiscale.typeVoie')" for="adresse-fiscale-typeVoie"
+              >Type Voie</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="typeVoie"
+              id="adresse-fiscale-typeVoie"
+              data-cy="typeVoie"
+              :class="{ valid: !$v.adresseFiscale.typeVoie.$invalid, invalid: $v.adresseFiscale.typeVoie.$invalid }"
+              v-model="$v.adresseFiscale.typeVoie.$model"
             />
           </div>
           <div class="form-group">
@@ -89,43 +131,37 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.adresseFiscale.localisation')" for="adresse-fiscale-localisation"
-              >Localisation</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              name="localisation"
-              id="adresse-fiscale-localisation"
-              data-cy="localisation"
-              :class="{ valid: !$v.adresseFiscale.localisation.$invalid, invalid: $v.adresseFiscale.localisation.$invalid }"
-              v-model="$v.adresseFiscale.localisation.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.adresseFiscale.modeManuel')" for="adresse-fiscale-modeManuel"
-              >Mode Manuel</label
+            <label
+              class="form-control-label"
+              v-text="$t('irsenApp.adresseFiscale.affichageInternet')"
+              for="adresse-fiscale-affichageInternet"
+              >Affichage Internet</label
             >
             <input
               type="checkbox"
               class="form-check"
-              name="modeManuel"
-              id="adresse-fiscale-modeManuel"
-              data-cy="modeManuel"
-              :class="{ valid: !$v.adresseFiscale.modeManuel.$invalid, invalid: $v.adresseFiscale.modeManuel.$invalid }"
-              v-model="$v.adresseFiscale.modeManuel.$model"
+              name="affichageInternet"
+              id="adresse-fiscale-affichageInternet"
+              data-cy="affichageInternet"
+              :class="{ valid: !$v.adresseFiscale.affichageInternet.$invalid, invalid: $v.adresseFiscale.affichageInternet.$invalid }"
+              v-model="$v.adresseFiscale.affichageInternet.$model"
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('irsenApp.adresseFiscale.type')" for="adresse-fiscale-type">Type</label>
+            <label
+              class="form-control-label"
+              v-text="$t('irsenApp.adresseFiscale.affichageIntranet')"
+              for="adresse-fiscale-affichageIntranet"
+              >Affichage Intranet</label
+            >
             <input
-              type="text"
-              class="form-control"
-              name="type"
-              id="adresse-fiscale-type"
-              data-cy="type"
-              :class="{ valid: !$v.adresseFiscale.type.$invalid, invalid: $v.adresseFiscale.type.$invalid }"
-              v-model="$v.adresseFiscale.type.$model"
+              type="checkbox"
+              class="form-check"
+              name="affichageIntranet"
+              id="adresse-fiscale-affichageIntranet"
+              data-cy="affichageIntranet"
+              :class="{ valid: !$v.adresseFiscale.affichageIntranet.$invalid, invalid: $v.adresseFiscale.affichageIntranet.$invalid }"
+              v-model="$v.adresseFiscale.affichageIntranet.$model"
             />
           </div>
         </div>

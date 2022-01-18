@@ -42,7 +42,7 @@ public class MandatAncien implements Serializable {
     @Column(name = "libelle_affichage")
     private String libelleAffichage;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JsonIgnoreProperties(value = { "senateur", "anciensMandats", "mandatsEnCours" }, allowSetters = true)
     private Mandat mandat;
 

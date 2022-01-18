@@ -125,11 +125,20 @@ public class AdressePostale2Resource {
         Optional<AdressePostale2> result = adressePostale2Repository
             .findById(adressePostale2.getId())
             .map(existingAdressePostale2 -> {
-                if (adressePostale2.getLabel() != null) {
-                    existingAdressePostale2.setLabel(adressePostale2.getLabel());
-                }
                 if (adressePostale2.getNumero() != null) {
                     existingAdressePostale2.setNumero(adressePostale2.getNumero());
+                }
+                if (adressePostale2.getBister() != null) {
+                    existingAdressePostale2.setBister(adressePostale2.getBister());
+                }
+                if (adressePostale2.getComplement1() != null) {
+                    existingAdressePostale2.setComplement1(adressePostale2.getComplement1());
+                }
+                if (adressePostale2.getComplement2() != null) {
+                    existingAdressePostale2.setComplement2(adressePostale2.getComplement2());
+                }
+                if (adressePostale2.getTypeVoie() != null) {
+                    existingAdressePostale2.setTypeVoie(adressePostale2.getTypeVoie());
                 }
                 if (adressePostale2.getVoie() != null) {
                     existingAdressePostale2.setVoie(adressePostale2.getVoie());
@@ -143,14 +152,11 @@ public class AdressePostale2Resource {
                 if (adressePostale2.getPays() != null) {
                     existingAdressePostale2.setPays(adressePostale2.getPays());
                 }
-                if (adressePostale2.getLocalisation() != null) {
-                    existingAdressePostale2.setLocalisation(adressePostale2.getLocalisation());
+                if (adressePostale2.getAffichageInternet() != null) {
+                    existingAdressePostale2.setAffichageInternet(adressePostale2.getAffichageInternet());
                 }
-                if (adressePostale2.getModeManuel() != null) {
-                    existingAdressePostale2.setModeManuel(adressePostale2.getModeManuel());
-                }
-                if (adressePostale2.getType() != null) {
-                    existingAdressePostale2.setType(adressePostale2.getType());
+                if (adressePostale2.getAffichageIntranet() != null) {
+                    existingAdressePostale2.setAffichageIntranet(adressePostale2.getAffichageIntranet());
                 }
 
                 return existingAdressePostale2;

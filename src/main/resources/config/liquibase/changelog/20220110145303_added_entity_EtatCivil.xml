@@ -53,15 +53,6 @@
             <column name="courriel_2" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="telephone_portable" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            <column name="telephone_portable_2" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            <column name="telephone_fixe" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
             <column name="departement_naissance_id" type="bigint">
                 <constraints nullable="true" unique="true" uniqueConstraintName="ux_etat_civil__departement_naissance_id" />
             </column>
@@ -70,6 +61,15 @@
             </column>
             <column name="categorie_socio_prof_id" type="bigint">
                 <constraints nullable="true" unique="true" uniqueConstraintName="ux_etat_civil__categorie_socio_prof_id" />
+            </column>
+            <column name="telephone_portable_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_etat_civil__telephone_portable_id" />
+            </column>
+            <column name="telephone_portable2_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_etat_civil__telephone_portable2_id" />
+            </column>
+            <column name="telephone_fixe_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_etat_civil__telephone_fixe_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
@@ -105,9 +105,6 @@
             <column name="profession" type="string"/>
             <column name="courriel" type="string"/>
             <column name="courriel_2" type="string"/>
-            <column name="telephone_portable" type="string"/>
-            <column name="telephone_portable_2" type="string"/>
-            <column name="telephone_fixe" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

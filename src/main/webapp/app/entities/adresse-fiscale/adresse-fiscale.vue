@@ -29,15 +29,17 @@
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.label')">Label</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.numero')">Numero</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.bister')">Bister</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.complement1')">Complement 1</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.complement2')">Complement 2</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.typeVoie')">Type Voie</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.voie')">Voie</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.codePostal')">Code Postal</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.ville')">Ville</span></th>
             <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.pays')">Pays</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.localisation')">Localisation</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.modeManuel')">Mode Manuel</span></th>
-            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.type')">Type</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.affichageInternet')">Affichage Internet</span></th>
+            <th scope="row"><span v-text="$t('irsenApp.adresseFiscale.affichageIntranet')">Affichage Intranet</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -48,15 +50,17 @@
                 adresseFiscale.id
               }}</router-link>
             </td>
-            <td>{{ adresseFiscale.label }}</td>
             <td>{{ adresseFiscale.numero }}</td>
+            <td>{{ adresseFiscale.bister }}</td>
+            <td>{{ adresseFiscale.complement1 }}</td>
+            <td>{{ adresseFiscale.complement2 }}</td>
+            <td>{{ adresseFiscale.typeVoie }}</td>
             <td>{{ adresseFiscale.voie }}</td>
             <td>{{ adresseFiscale.codePostal }}</td>
             <td>{{ adresseFiscale.ville }}</td>
             <td>{{ adresseFiscale.pays }}</td>
-            <td>{{ adresseFiscale.localisation }}</td>
-            <td>{{ adresseFiscale.modeManuel }}</td>
-            <td>{{ adresseFiscale.type }}</td>
+            <td>{{ adresseFiscale.affichageInternet }}</td>
+            <td>{{ adresseFiscale.affichageIntranet }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link

@@ -7,16 +7,34 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="$t('irsenApp.adresseFiscale.label')">Label</span>
-          </dt>
-          <dd>
-            <span>{{ adresseFiscale.label }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('irsenApp.adresseFiscale.numero')">Numero</span>
           </dt>
           <dd>
             <span>{{ adresseFiscale.numero }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.adresseFiscale.bister')">Bister</span>
+          </dt>
+          <dd>
+            <span>{{ adresseFiscale.bister }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.adresseFiscale.complement1')">Complement 1</span>
+          </dt>
+          <dd>
+            <span>{{ adresseFiscale.complement1 }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.adresseFiscale.complement2')">Complement 2</span>
+          </dt>
+          <dd>
+            <span>{{ adresseFiscale.complement2 }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('irsenApp.adresseFiscale.typeVoie')">Type Voie</span>
+          </dt>
+          <dd>
+            <span>{{ adresseFiscale.typeVoie }}</span>
           </dd>
           <dt>
             <span v-text="$t('irsenApp.adresseFiscale.voie')">Voie</span>
@@ -43,22 +61,16 @@
             <span>{{ adresseFiscale.pays }}</span>
           </dd>
           <dt>
-            <span v-text="$t('irsenApp.adresseFiscale.localisation')">Localisation</span>
+            <span v-text="$t('irsenApp.adresseFiscale.affichageInternet')">Affichage Internet</span>
           </dt>
           <dd>
-            <span>{{ adresseFiscale.localisation }}</span>
+            <span>{{ adresseFiscale.affichageInternet }}</span>
           </dd>
           <dt>
-            <span v-text="$t('irsenApp.adresseFiscale.modeManuel')">Mode Manuel</span>
+            <span v-text="$t('irsenApp.adresseFiscale.affichageIntranet')">Affichage Intranet</span>
           </dt>
           <dd>
-            <span>{{ adresseFiscale.modeManuel }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('irsenApp.adresseFiscale.type')">Type</span>
-          </dt>
-          <dd>
-            <span>{{ adresseFiscale.type }}</span>
+            <span>{{ adresseFiscale.affichageIntranet }}</span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

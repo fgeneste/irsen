@@ -14,6 +14,8 @@ import EtatCivilService from '@/entities/etat-civil/etat-civil.service';
 import AdressesService from '@/entities/adresses/adresses.service';
 
 import MandatService from '@/entities/mandat/mandat.service';
+
+import DecorationService from '@/entities/decoration/decoration.service';
 import AlertService from '@/shared/alert/alert.service';
 
 const localVue = createLocalVue();
@@ -60,6 +62,11 @@ describe('Component Tests', () => {
 
           mandatService: () =>
             sinon.createStubInstance<MandatService>(MandatService, {
+              retrieve: sinon.stub().resolves({}),
+            } as any),
+
+          decorationService: () =>
+            sinon.createStubInstance<DecorationService>(DecorationService, {
               retrieve: sinon.stub().resolves({}),
             } as any),
         },
