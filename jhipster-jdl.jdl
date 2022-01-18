@@ -45,40 +45,45 @@ entity EtatCivil{
 }
 
 entity AdresseFiscale{
-	id Long,
-	label String,
 	numero String,
+	bister String,
+	complement1 String,
+	complement2 String,
+	typeVoie String,
 	voie String,
 	codePostal String,
 	ville String,
 	pays String,
-	localisation String,
-	modeManuel Boolean,
-    type String,
+	affichageInternet Boolean,
+	affichageIntranet Boolean,
 }
 
 entity AdressePostale{
-	label String,
 	numero String,
-	voie String,
-	codePostal String,
-	ville String,
-	pays String,
-	localisation String,
-	modeManuel Boolean,
-    type String,
+    bister String,
+    complement1 String,
+    complement2 String,
+    typeVoie String,
+    voie String,
+    codePostal String,
+    ville String,
+    pays String,
+    affichageInternet Boolean,
+    affichageIntranet Boolean,
 }
 
 entity AdressePostale2{
-	label String,
 	numero String,
-	voie String,
-	codePostal String,
-	ville String,
-	pays String,
-	localisation String,
-	modeManuel Boolean,
-    type String,
+    bister String,
+    complement1 String,
+    complement2 String,
+    typeVoie String,
+    voie String,
+    codePostal String,
+    ville String,
+    pays String,
+    affichageInternet Boolean,
+    affichageIntranet Boolean,
 }
 
 entity Adresses{
@@ -124,6 +129,11 @@ entity MandatEnCours{
 	libelleAffichage String,
 }
 
+entity Decoration {
+    type String,
+    grade String
+}
+
 relationship OneToOne {
 	Senateur{etatCivil} to EtatCivil{senateur},
     Senateur{adresses} to Adresses{senateur},
@@ -141,5 +151,6 @@ relationship ManyToOne {
 	MandatAncien to Mandat{anciensMandats},	
 	MandatEnCours to Mandat{mandatsEnCours},	
 	FonctionAncien to MandatAncien{fonctions},
-    FonctionEnCours to MandatEnCours{fonctions},   
+    FonctionEnCours to MandatEnCours{fonctions},
+    Decoration to Personne{decorations},
 }
