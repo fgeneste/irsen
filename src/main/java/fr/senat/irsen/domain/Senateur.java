@@ -50,7 +50,7 @@ public class Senateur implements Serializable {
     @JoinColumn(unique = true)
     private Mandat mandats;
 
-    @OneToMany(mappedBy = "senateur")
+    @OneToMany(mappedBy = "senateur", cascade = CascadeType.ALL)
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "senateur" }, allowSetters = true)
     private Set<Decoration> decorations = new HashSet<>();
