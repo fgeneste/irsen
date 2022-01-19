@@ -1,0 +1,93 @@
+-- View: senateurs.vue_grpsenpdtsec
+
+-- DROP VIEW senateurs.vue_grpsenpdtsec;
+
+CREATE OR REPLACE VIEW senateurs.vue_grpsenpdtsec AS 
+ SELECT g.orgcod,
+    g.typorgcod,
+    g.orgdatcre,
+    to_char(g.orgdatcre, 'YYYY'::text) AS orgdatcreann,
+    g.temvalcod AS grptemvalcod,
+    g.grpsenweb,
+    g.orgdatfin,
+    g.orgnumtri,
+    g.grpsenalf,
+    g.orgart,
+    g.evelic AS grpevelic,
+    g.evelib AS grpevelib,
+    g.evelil AS grpevelil,
+    g.scnorgcod,
+    g.typgrpsencod,
+    g.orgurlsim,
+    g.orgurlcmp,
+    t.evelic AS typgrpsenevelic,
+    t.evelib AS typgrpsenevelib,
+    t.evelil AS typgrpsenevelil,
+    t.typgrpsennumtri,
+    fm.temvalcod AS fontemvalcod,
+    fm.evelic AS fonevelic,
+    fm.evelil AS fonevelil,
+    fm.fongrpsencod,
+    fm.fonmemgrpsendatdeb,
+    fm.fonmemgrpsendatfin,
+    nvl(fm.fonmemgrpsenrngele, 100) AS fonmemgrpsenrngele,
+    f.fongrpsenlic,
+    f.fongrpsenlib,
+    f.fongrpsenlicfem,
+    f.fongrpsenlibfem,
+    f.fongrpsenlicplu,
+    f.fongrpsenlibplu,
+    f.fongrpsennumtri,
+    m.memgrpsendatent,
+    m.memgrpsendatsor,
+    m.temvalcod AS memtemvalcod,
+    m.evelic AS memevelic,
+    m.evelib AS memevelib,
+    s.senmat,
+    s.quacod AS senquacod,
+    s.sennomuse,
+    s.sennomtec,
+    s.senprenomuse,
+    s.sennomdis,
+    s.sendatnai,
+    s.etasencod,
+    s.sendespro,
+    s.sengrppolcodcou,
+    s.sengrppolliccou,
+    s.sentypappcou,
+    s.sencomcodcou,
+    s.sencomliccou,
+    s.sencircou,
+    s.sendatpreele,
+    s.sendatderele,
+    s.sennomusecap,
+    nvl(se.secexedatdeb, to_date('01/01/'::text || to_char(nvl(se.secexeanndeb, 1900)), 'DD-MM-YYYY'::text)) AS secexedatdeb,
+    nvl(se.secexedatfin, to_date('31/12/'::text || to_char(nvl(se.secexeannfin, 2312)), 'DD-MM-YYYY'::text)) AS secexedatfin,
+    se.temvalcod,
+    se.evelic,
+    se.evetempub AS secexetempub,
+    p.permat,
+    p.pernomuse,
+    p.cadcod,
+    p.srvcod,
+    p.perprenom,
+    p.pernomtec,
+    p.perdatent,
+    p.perdatsor,
+    p.quacod AS perquacod,
+    p.pernumtel,
+    p.pernumtelext,
+    p.peredirep,
+    p.perema,
+    p.discoucod
+   FROM senateurs.grpsenami g
+     LEFT JOIN senateurs.memgrpsen m ON m.orgcod::text = g.orgcod::text
+     LEFT JOIN senateurs.fonmemgrpsen fm ON fm.memgrpsenid = m.memgrpsenid
+     LEFT JOIN senateurs.fongrpsen f ON f.fongrpsencod::text = fm.fongrpsencod::text
+     LEFT JOIN senateurs.typgrpsen t ON t.typgrpsencod::text = g.typgrpsencod::text
+     LEFT JOIN senateurs.sen s ON s.senmat = m.senmat
+     LEFT JOIN senateurs.secexe se ON se.orgcod::text = g.orgcod::text
+     LEFT JOIN senateurs.per p ON p.permat = se.permat;
+
+ALTER TABLE senateurs.vue_grpsenpdtsec
+  OWNER TO arsen;
